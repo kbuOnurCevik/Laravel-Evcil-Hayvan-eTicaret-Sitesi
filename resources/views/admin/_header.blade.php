@@ -12,13 +12,14 @@
 
 
 
-                <span class="ml-2 d-none d-lg-inline text-white small">onur</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">{{Auth::user()->name}}</span>
 
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 
-                    <a href="#" class="dropdown-item"  >
-
+                        @auth()
+                            <a href="{{route('admin_logout')}}" class="dropdown-item"  >
+                                @endauth
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Logout
                     </a>
