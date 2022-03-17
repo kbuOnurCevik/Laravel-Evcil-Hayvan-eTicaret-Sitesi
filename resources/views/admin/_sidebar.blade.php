@@ -1,11 +1,11 @@
 <!-- Sidebar -->
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-left" href="#">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin_home')}}">
         <div class="sidebar-brand-text mx-3">Admin Home</div>
     </a>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{route('admin_category')}}">
             <i class="far fa-fw fa-window-maximize"></i>
             <span>Category</span>
         </a>
