@@ -14,7 +14,7 @@
         </div>
 
         <div class="text-left">
-            <h4 class="pt-3">Category List</h4>
+            <a class="btn btn-info mb-1" href="{{route('admin_category_add')}}">Add Category</a>
         </div>
 
         <!-- Row -->
@@ -42,7 +42,7 @@
                                     <td>{{$rs->title}}</td>
                                     <td>{{$rs->status}}</td>
                                     <td>Edit</td>
-                                    <td>Delete</td>
+                                    <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Deleting ! Are you sure?')">Delete</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
