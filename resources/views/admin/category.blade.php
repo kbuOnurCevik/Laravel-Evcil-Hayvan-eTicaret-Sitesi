@@ -17,6 +17,10 @@
             <a class="btn btn-info mb-1" href="{{route('admin_category_add')}}">Add Category</a>
         </div>
 
+        <div class="row col-lg-3">
+            @include('home.message')
+        </div>
+
         <!-- Row -->
         <div class="row">
             <!-- Datatables -->
@@ -41,7 +45,7 @@
                                     <td>{{$rs->parent_id}}</td>
                                     <td>{{$rs->title}}</td>
                                     <td>{{$rs->status}}</td>
-                                    <td>Edit</td>
+                                    <td><a href="{{route('admin_category_edit',['id'=>$rs->id])}}">Edit</a></td>
                                     <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Deleting ! Are you sure?')">Delete</a></td>
                                 </tr>
                             @endforeach
