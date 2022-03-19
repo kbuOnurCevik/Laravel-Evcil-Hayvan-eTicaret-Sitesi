@@ -20,7 +20,7 @@
         <div class="card mb-4">
 
             <div class="card-body">
-                <form action="{{route('admin_product_store')}}" method="post">
+                <form action="{{route('admin_product_store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label><b>Parent</b></label>
@@ -65,6 +65,10 @@
                     <div class="form-group">
                         <label><b>Slug</b></label>
                         <input type="text" name="slug" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label><b>Image</b></label>
+                        <input type="file" name="image" class="form-control">
                     </div>
                     <div class = "form-group">
                         <label><b>Status</b></label>
