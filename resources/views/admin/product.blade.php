@@ -46,7 +46,7 @@
                             @foreach($datalist as $rs)
                                 <tr>
                                     <td>{{$rs->id}}</td>
-                                    <td>{{$rs->category_id}}</td>
+                                    <td>{{$rs->category->title}}</td>
                                     <td>{{$rs->title}}</td>
                                     <td>{{$rs->price}}</td>
                                     <td>{{$rs->quantity}}</td>

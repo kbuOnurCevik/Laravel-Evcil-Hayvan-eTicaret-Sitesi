@@ -54,7 +54,9 @@ class ProductController extends Controller
         $data->quantity = $request->input('quantity');
         $data->tax = (int)$request->input('tax');
         $data->detail = $request->input('detail');
-        $data->image = Storage::putFile('images', $request->file('image'));
+        if ($request->file('image') !== null){
+            $data->image = Storage::putFile('images', $request->file('image'));
+        }
         $data->save();
         return redirect()->route('admin_products')->with('success','Product Created');;
     }
@@ -105,7 +107,9 @@ class ProductController extends Controller
         $data->quantity = $request->input('quantity');
         $data->tax = (int)$request->input('tax');
         $data->detail = $request->input('detail');
-        $data->image = Storage::putFile('images', $request->file('image'));
+        if ($request->file('image') !== null){
+            $data->image = Storage::putFile('images', $request->file('image'));
+        }
         $data->save();
         return redirect()->route('admin_products')->with('success','Product Updated');
     }
