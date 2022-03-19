@@ -107,7 +107,7 @@ class ProductController extends Controller
         $data->detail = $request->input('detail');
         $data->image = Storage::putFile('images', $request->file('image'));
         $data->save();
-        return redirect()->route('admin_products')->with('success','Product Updated');;
+        return redirect()->route('admin_products')->with('success','Product Updated');
     }
 
     /**
@@ -122,6 +122,6 @@ class ProductController extends Controller
         $data = Product::find($id);
         $data->delete();
 
-        return redirect()->route('admin_products')->with('success','Product Deleted');;
+        return redirect()->route('admin_products')->with('success','Product Deleted');
     }
 }
