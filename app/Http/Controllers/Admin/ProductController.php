@@ -118,7 +118,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product,$id)
     {
-        //DB::table('products')->where('id', '=', $id)->delete();
+
         $data = Product::find($id);
         $data->delete();
 

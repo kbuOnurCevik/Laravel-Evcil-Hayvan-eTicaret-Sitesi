@@ -36,6 +36,7 @@
                                 <th style="cursor: pointer">Price</th>
                                 <th style="cursor: pointer">Quantity</th>
                                 <th style="cursor: pointer">Image</th>
+                                <th style="cursor: pointer">Image Gallery</th>
                                 <th style="cursor: pointer">Status</th>
                                 <th style="cursor: pointer">Edit</th>
                                 <th style="cursor: pointer">Delete</th>
@@ -54,9 +55,13 @@
                                             <img src="{{Storage::url($rs->image)}}" height="30" alt="">
                                         @endif
                                     </td>
+                                    <td><a href="{{route('admin_image_add',['product_id'=>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                                            <img src="{{asset('assets/admin/img')}}/gallery.jpg" height="25"></a>
+                                    </td>
                                     <td>{{$rs->status}}</td>
-                                    <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}">Edit</a></td>
-                                    <td><a href="{{route('admin_product_delete',['id'=>$rs->id])}}" onclick="return confirm('Deleting ! Are you sure?')">Delete</a></td>
+                                    <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}"><img src="{{asset('assets/admin/img')}}/edit.jpg" height="25"></a></td>
+                                    <td><a href="{{route('admin_product_delete',['id'=>$rs->id])}}" onclick="return confirm('Deleting ! Are you sure?')">
+                                            <img src="{{asset('assets/admin/img')}}/delete.png" height="25"></a></td>
                                 </tr>
                             @endforeach
                             </tbody>
