@@ -10,9 +10,6 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin_home')}}">Home</a></li>
                 <li class="breadcrumb-item">Add Category</li>
-
-
-
             </ol>
         </div>
 
@@ -22,11 +19,11 @@
                 <form action="{{route('admin_category_create')}}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label><b>Parent</b></label>
+                        <label><b>Parent Category</b></label>
                         <select class="form-control select2" name="parent_id" style="width: 100%;">
                             <option value="0" selected="selected">Main Category</option>
                             @foreach($datalist as $rs)
-                                <option value="{{$rs->id}}">{{$rs->title}}</option>
+                                <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                             @endforeach
                         </select>
                     </div>
