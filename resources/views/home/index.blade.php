@@ -1,11 +1,17 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
 @extends('layouts.home')
 
-@section('title','Laravel E-Ticaret Site')
-@section('description')
-    Evcil Hayvan Site
+@section('title')
+    {{$setting->title}}
 @endsection
-@section('keywords','Pet,Mama,Hayvan')
 
+@section('description')
+    {{$setting->description}}
+@endsection
+
+@section('keywords', $setting->keywords)
 
 
 @section('content')

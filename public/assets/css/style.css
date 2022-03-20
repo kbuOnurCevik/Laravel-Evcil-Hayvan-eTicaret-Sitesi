@@ -12791,8 +12791,10 @@ html.rd-navbar-fixed-linked .page {
 }
 
 .rd-navbar-modern.rd-navbar-static .rd-navbar-button {
-	display: block;
-	text-align: right;
+	display: flex; 
+	text-align: center;
+	align-items: flex-end;
+	justify-content: right;
 }
 
 .rd-navbar-modern.rd-navbar-static .rd-navbar-panel {

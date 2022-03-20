@@ -23,7 +23,7 @@
                             <div class="unit unit-spacing-xs align-items-center">
                                 <div class="unit-left"><span class="linear-icon icon linearicons-map-marker"></span>
                                 </div>
-                                <!--  <div class="unit-body"><a href="#">523 Sylvan Ave<br/>Mountain View, CA 94041</a></div>-->
+                                <div class="unit-body"><a href="#">{{$setting->address}}</a></div>
                             </div>
                         </div>
                         <a class="button button-primary-outline button-sm button-icon button-icon-left" href="#"><span
@@ -35,19 +35,41 @@
                         <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span>
                         </button>
                         <!-- RD Navbar Brand-->
-
-
-                    <!--  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark"
+                        <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark"
                                                                                              src="{{asset('assets')}}/images/logo-default-336x120.png"
                                                                                              alt="" width="168"
                                                                                              height="60"/></a>
-                        </div> -->
-
+                        </div>
 
                     </div>
-                    <!-- <div class="rd-navbar-button"><a
-                             class="button button-primary-outline button-sm button-icon button-icon-left" href="#"><span
-                                 class="icon mdi mdi-email-outline icon-size-m"></span>Get in touch</a></div>-->
+
+                    @auth
+                        <div class="rd-navbar-button">
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">{{Auth::user()->name}}</a>
+                                <!-- RD Navbar Dropdown-->
+                                <ul class="rd-menu rd-navbar-dropdown" style="margin-top: -40px">
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Profile</a></li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{route('logout')}}">Logout</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </div>
+                    @endauth
+
+                    @guest()
+                        <div class="rd-navbar-button" style="padding-left: 40px"><a
+                                class="button button-primary-outline button-sm button-icon button-icon-left"
+                                href="#"><span
+                                    class="icon mdi  icon-size-m"></span>Login</a>
+                            <div class="rd-navbar-button"><a
+                                    class="button button-primary-outline button-sm button-icon button-icon-left"
+                                    href="#"><span
+                                        class="icon mdi  icon-size-m"></span>Register</a>
+                            </div>
+                        </div>
+                    @endguest
+
                 </div>
             </div>
 
@@ -57,7 +79,7 @@
                     <div class="rd-navbar-nav-wrap">
                         <!-- RD Navbar Nav-->
                         <ul class="rd-navbar-nav">
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
+                            <li class="rd-nav-item active"><a class="rd-nav-link" href="/home">Home</a>
                             </li>
 
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#">Categories</a>
@@ -81,6 +103,12 @@
 
                                 </ul>
                             </li>
+
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">About Us</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">FAQ</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">Contact</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">References</a>
+
                         </ul>
 
                     </div>
