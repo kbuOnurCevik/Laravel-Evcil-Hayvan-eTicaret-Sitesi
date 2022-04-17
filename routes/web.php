@@ -72,6 +72,12 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 
 });
 
+Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
+
+    Route::get('/profile',[UserController::class,'index'])->name('userprofile');
+
+});
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
