@@ -35,11 +35,11 @@
                         <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span>
                         </button>
                         <!-- RD Navbar Brand-->
-                        <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark"
+                    <!--  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark"
                                                                                              src="{{asset('assets')}}/images/logo-default-336x120.png"
                                                                                              alt="" width="168"
                                                                                              height="60"/></a>
-                        </div>
+                        </div>-->
 
                     </div>
 
@@ -48,7 +48,7 @@
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#">{{Auth::user()->name}}</a>
                                 <!-- RD Navbar Dropdown-->
                                 <ul class="rd-menu rd-navbar-dropdown" style="margin-top: -40px">
-                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Profile</a></li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{route('myprofile')}}">My Account</a></li>
                                     <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{route('logout')}}">Logout</a>
                                     </li>
 
