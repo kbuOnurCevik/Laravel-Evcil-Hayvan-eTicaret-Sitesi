@@ -32,8 +32,8 @@
     </section>
 
     <!-- Section About-->
-    <section class="section section-sm section-last bg-default text-start">
-        <div class="container grid-system-bordered grid-demonstration">
+    <section class="section section-sm section-last text-start">
+        <div class="container grid-demonstration">
 
             <div class="row">
                 <div class="col-4">
@@ -42,30 +42,41 @@
 
                 </div>
                 <div class="col-8">
+
                     <div class="title-classic">
                         <h3 class="title-classic-title">Get in touch</h3>
-                        <p class="title-classic-subtitle">We are available 24/7 by fax, e-mail or by phone. You can also use
+                        <p class="title-classic-subtitle">We are available 24/7 by fax, e-mail or by phone. You can also
+                            use
                             our quick contact form to ask a question about our solutions.</p>
                     </div>
-                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact"
-                          method="post" action="#">
+                    <div class="row row-20 row-md-30">
+                        <div class="col-lg-12">
+                            @include('home.message')
+                        </div>
+                    </div>
+                    <form
+                        method="post" action="{{route('sendmessage')}}">
+                        @csrf
                         <div class="row row-20 row-md-30">
                             <div class="col-lg-12">
                                 <div class="row row-20 row-md-30">
-                                    <div class="col-sm-6">
+
+                                    <div class="col-sm-12">
+                                        <div class="form-wrap">
+                                            <input class="form-input" id="subject" type="text" name="subject"
+                                                   data-constraints="@Required"/>
+                                            <label class="form-label" for="subject">Subject</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
                                         <div class="form-wrap">
                                             <input class="form-input" id="contact-first-name-2" type="text" name="name"
                                                    data-constraints="@Required"/>
-                                            <label class="form-label" for="contact-first-name-2">First Name</label>
+                                            <label class="form-label" for="contact-first-name-2">Name & Surname</label>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-wrap">
-                                            <input class="form-input" id="contact-last-name-2" type="text" name="name"
-                                                   data-constraints="@Required"/>
-                                            <label class="form-label" for="contact-last-name-2">Last Name</label>
-                                        </div>
-                                    </div>
+
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
                                             <input class="form-input" id="contact-email-2" type="email" name="email"
@@ -77,20 +88,21 @@
                                         <div class="form-wrap">
                                             <input class="form-input" id="contact-phone-2" type="text" name="phone"
                                                    data-constraints="@Numeric"/>
-                                            <label class="form-label" for="contact-phone-2">Phone</label>
+                                            <label class="form-label" for="contact-phone-2">Phone Number</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-wrap">
-                                    <label class="form-label" for="contact-message-2">Message</label>
-                                    <textarea class="form-input textarea-lg" id="contact-message-2" name="phone"
+                                    <label class="form-label" for="contact-message-2">Your Message</label>
+                                    <textarea class="form-input textarea-lg" id="contact-message-2" name="message"
                                               data-constraints="@Required"></textarea>
                                 </div>
                             </div>
                         </div>
-                        <button class="button button-lg button-primary button-zakaria" type="submit">Send Message</button>
+                        <button class="button button-lg button-primary button-zakaria" type="submit">Send Message
+                        </button>
                     </form>
 
                 </div>
@@ -98,9 +110,5 @@
         </div>
 
     </section>
-
-
-
-
 
 @endsection

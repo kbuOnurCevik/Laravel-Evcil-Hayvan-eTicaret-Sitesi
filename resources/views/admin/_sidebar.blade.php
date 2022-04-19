@@ -26,6 +26,13 @@
             <span>Settings</span>
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('admin_messages')}}"
+           aria-controls="collapseForm">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Contact Messages</span>
+        </a>
+    </li>
     <!--
          <li class="nav-item">
              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"

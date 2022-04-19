@@ -66,6 +66,5 @@
          </div>
      </div>
 </footer>
-<div class="snackbars" id="form-output-global"></div>
 <script src="{{asset('assets')}}/js/core.min.js"></script>
 <script src="{{asset('assets')}}/js/script.js"></script>
