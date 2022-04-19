@@ -107,7 +107,7 @@
                             <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('aboutus')}}">About Us</a>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="/fag">FAQ</a>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('contact')}}">Contact</a>
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">References</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('references')}}">References</a>
 
                         </ul>
 
