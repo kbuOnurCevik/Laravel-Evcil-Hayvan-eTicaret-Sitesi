@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Models\Category;
 use App\Models\Setting;
+use App\Models\Product;
 use App\Models\Message;
 use MongoDB\Driver\Session;
 use Illuminate\Http\Request;
@@ -24,7 +25,29 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        return view('home.index',['setting'=>$setting]);
+        $slider = Product::select('id','title', 'image', 'price','slug')->limit(4)->get();
+
+        $data = [
+            'setting' => $setting,
+            'slider' => $slider,
+            'page' => 'home'
+        ];
+        return view('home.index',$data);
+    }
+
+    public function product($id,$slug)
+    {
+        $data = Product::find($id);
+        print_r($data);
+        exit();
+    }
+    public function categoryproducts($id,$slug)
+    {
+        $datalist = Product::where('category_id',$id)->get();
+        $data = Category::find($id);
+        #print_r($data);
+        #exit();
+        return view('home.category_products',['data'=>$data,'datalist'=>$datalist]);
     }
 
     public function aboutus()

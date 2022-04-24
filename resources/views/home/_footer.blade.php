@@ -22,7 +22,9 @@
            <div class="col-sm-6 col-md-7 col-lg-5 wow fadeInRight" data-wow-delay=".1s">
                     <h5 class="footer-modern-title">Quick Links</h5>
                     <ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block">
-                        <li><a href="{{route('home')}}">About Us</a></li>
+                        <li><a href="{{route('aboutus')}}">About Us</a></li>
+                        <li><a href="{{route('contact')}}">Contact Us</a></li>
+                        <li><a href="{{route('references')}}">References</a></li>
 
                     </ul>
                 </div>
