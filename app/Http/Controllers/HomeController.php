@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Models\Category;
 use App\Models\Setting;
 use App\Models\Product;
+use App\Models\Image;
 use App\Models\Message;
 use MongoDB\Driver\Session;
 use Illuminate\Http\Request;
@@ -52,9 +53,10 @@ class HomeController extends Controller
     public function product($id,$slug)
     {
         $data = Product::find($id);
-        print_r($data);
-        exit();
+        $datalist = Image::where('product_id',$id)->get();
+        return view('home.product_detail',['data'=>$data,'datalist'=>$datalist]);
     }
+
     public function categoryproducts($id,$slug)
     {
         $datalist = Product::where('category_id',$id)->get();
