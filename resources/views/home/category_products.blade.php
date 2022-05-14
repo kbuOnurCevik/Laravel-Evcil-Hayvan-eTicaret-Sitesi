@@ -51,17 +51,20 @@
                                         {{$rs->title}}</a>
                             </h5>
                             <div class="product-price-wrap">
-                                <div class="product-price"><p style="color: red">
+                                <div class="product-price "><p style="color: red">
                                         <strong>{{$rs->price}}₺</strong></p></div>
                             </div>
                         </div>
+
                         <div class="product-button-wrap">
                             <div class="product-button"><a
-
-                                    href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}"><p style="color: red">
-                                        <strong>Detaylar</strong></p></a></div>
-
+                                    class="button button-secondary button-zakaria fl-bigmug-line-search74"
+                                    href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}"></a></div>
+                            <div class="product-button"><a
+                                    class="button button-secondary button-zakaria fl-bigmug-line-shopping202"
+                                    href="{{route('addtocart',['id'=>$rs->id])}}"></a></div>
                         </div>
+
                     </article>
 
                 @endforeach

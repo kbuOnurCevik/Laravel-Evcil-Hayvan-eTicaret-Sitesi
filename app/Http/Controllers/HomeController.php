@@ -26,13 +26,27 @@ class HomeController extends Controller
     {
         $setting = Setting::first();
         $slider = Product::select('id','title', 'image', 'price','slug')->limit(4)->get();
+        $daily = Product::select('id','title', 'image', 'price','slug')->limit(3)->inRandomOrder()->get();
+        $last = Product::select('id','title', 'image', 'price','slug')->limit(3)->orderByDesc('id')->get();
+        $picked = Product::select('id','title', 'image', 'price','slug')->limit(3)->inRandomOrder()->get();
 
         $data = [
             'setting' => $setting,
             'slider' => $slider,
+            'daily' => $daily,
+            'picked' => $picked,
+            'last' => $last,
             'page' => 'home'
         ];
         return view('home.index',$data);
+    }
+
+    public function addtocart($id)
+    {
+        echo "Add to CART";
+        $data = Product::find($id);
+        print_r($data);
+        exit();
     }
 
     public function product($id,$slug)
