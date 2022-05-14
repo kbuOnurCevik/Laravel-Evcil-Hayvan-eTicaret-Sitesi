@@ -57,6 +57,17 @@ class HomeController extends Controller
         return view('home.product_detail',['data'=>$data,'datalist'=>$datalist]);
     }
 
+    public function getproduct(Request $request)
+    {
+        $data = Product::where('title',$request->input('search'))->first();
+        if ($data === null ){
+            return redirect()->route('home');
+        }else{
+            return redirect()->route('product',['id'=>$data->id,'slug'=>$data->slug]);
+        }
+
+    }
+
     public function categoryproducts($id,$slug)
     {
         $datalist = Product::where('category_id',$id)->get();

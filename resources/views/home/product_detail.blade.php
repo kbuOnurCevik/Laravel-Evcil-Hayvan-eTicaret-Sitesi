@@ -104,9 +104,9 @@
                 <div class="nav-tabs-wrap">
                     <ul class="nav nav-tabs nav-tabs-1 single-product-tabs">
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-1"
-                                                                    data-bs-toggle="tab">Reviews</a></li>
+                                                                    data-bs-toggle="tab">Yorumlar</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2"
-                                                                    data-bs-toggle="tab">Additional information</a></li>
+                                                                    data-bs-toggle="tab">Detaylar</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3"
                                                                     data-bs-toggle="tab">Delivery and payment</a></li>
                     </ul>
