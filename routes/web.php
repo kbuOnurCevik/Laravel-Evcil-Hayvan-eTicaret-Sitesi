@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name('home') ;
 Route::get('/home',[\App\Http\Controllers\HomeController::class,'index'])->name('homepage') ;
 Route::get('/aboutus',[\App\Http\Controllers\HomeController::class,'aboutus'])->name('aboutus') ;
-Route::get('/fag',[\App\Http\Controllers\HomeController::class,'fag'])->name('fag') ;
+Route::get('/faq',[\App\Http\Controllers\HomeController::class,'faq'])->name('faq') ;
 Route::get('/contact',[\App\Http\Controllers\HomeController::class,'contact'])->name('contact') ;
 Route::get('/references',[\App\Http\Controllers\HomeController::class,'references'])->name('references') ;
 Route::post('/sendmessage',[\App\Http\Controllers\HomeController::class,'sendmessage'])->name('sendmessage') ;
@@ -68,6 +69,18 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     #Setting
     Route::get('setting',[\App\Http\Controllers\Admin\SettingController::class,'index'])->name('admin_setting');
     Route::post('setting/update',[\App\Http\Controllers\Admin\SettingController::class,'update'])->name('admin_setting_update');
+
+    # Faq
+    Route::prefix('faq')->group(function () {
+
+        Route::get('/',[FaqController::class,'index'])->name('admin_faq');
+        Route::get('create',[FaqController::class,'create'])->name('admin_faq_add');
+        Route::post('store',[FaqController::class,'store'])->name('admin_faq_store');
+        Route::get('edit/{id}',[FaqController::class,'edit'])->name('admin_faq_edit');
+        Route::post('update/{id}',[FaqController::class,'update'])->name('admin_faq_update');
+        Route::get('delete/{id}',[FaqController::class,'destroy'])->name('admin_faq_delete');
+        Route::get('show',[FaqController::class,'show'])->name('admin_faq_show');
+    });
 
 });
 
