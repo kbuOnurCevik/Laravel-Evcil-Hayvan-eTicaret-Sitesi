@@ -57,7 +57,7 @@ class ProductController extends Controller
             $data->image = Storage::putFile('images', $request->file('image'));
         }
         $data->save();
-        return redirect()->route('user_products')->with('success','Ürün başarıyla eklendi.');;
+        return redirect()->route('user_products')->with('success','Ürün başarıyla eklendi.');
     }
 
     /**

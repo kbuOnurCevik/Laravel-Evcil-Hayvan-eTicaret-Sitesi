@@ -85,14 +85,24 @@
                                 <li><span>Weight:</span><span> 0,44 lbs</span></li>
                                 <li><span>Size:</span><span>60 x 60 x 90 cm</span></li>
                             </ul>-->
-                        <div class="group-xs group-middle">
-                            <!--<div class="product-stepper">
-                                    <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000">
-                                </div>-->
-                            <div><a class="button button-lg button-secondary button-zakaria"
-                                    href="{{route('product',['id'=>$data->id,'slug'=>$data->slug])}}">Sepete Ekle</a>
+
+                        <form action="{{route('user_shopcart_add',['id'=>$data->id])}}" method="post">
+                            @csrf
+                            <div class="group-xs group-middle">
+                                <div class="product-stepper">
+                                    <input class="form-input" type="number" name="quantity" data-zeros="true" value="1"
+                                           min="1"
+                                           max="{{$data->quantity}}">
+
+                                </div>
+
+                                <button type="submit" class="button button-lg button-secondary button-zakaria"
+                                >Sepete Ekle
+                                </button>
                             </div>
-                        </div>
+                        </form>
+
+
                         <hr class="hr-gray-100">
 
                     </div>

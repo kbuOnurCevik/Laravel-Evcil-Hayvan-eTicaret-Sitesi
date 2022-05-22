@@ -132,73 +132,22 @@
 
                     </div>
 
-
                     <!-- RD Navbar Basket-->
-                    <div class="rd-navbar-basket-wrap">
-                        <button class="rd-navbar-basket fl-bigmug-line-shopping202"
-                                data-rd-navbar-toggle=".cart-inline"><span>2</span></button>
-                        <div class="cart-inline">
-                            <div class="cart-inline-header">
-                                <h5 class="cart-inline-title">In cart:<span> 2</span> Products</h5>
-                                <h6 class="cart-inline-title">Total price:<span> $34</span></h6>
-                            </div>
-                            <div class="cart-inline-body">
-                                <div class="cart-inline-item">
-                                    <div class="unit unit-spacing-sm align-items-center">
-                                        <div class="unit-left"><a class="cart-inline-figure"
-                                                                  href="single-product.html"><img
-                                                    src="{{asset('assets')}}/images/product-mini-1-100x90.jpg"
-                                                    alt="" width="100" height="90"/></a></div>
-                                        <div class="unit-body">
-                                            <h6 class="cart-inline-name"><a href="single-product.html">Deep Dish
-                                                    Cuddler</a></h6>
-                                            <div>
-                                                <div class="group-xs group-middle">
-                                                    <div class="table-cart-stepper">
-                                                        <input class="form-input" type="number" data-zeros="true"
-                                                               value="1" min="1" max="1000"/>
-                                                    </div>
-                                                    <h6 class="cart-inline-title">$23.00</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cart-inline-item">
-                                    <div class="unit unit-spacing-sm align-items-center">
-                                        <div class="unit-left"><a class="cart-inline-figure"
-                                                                  href="single-product.html"><img
-                                                    src="{{asset('assets')}}/images/product-mini-2-100x90.jpg"
-                                                    alt="" width="100" height="90"/></a></div>
-                                        <div class="unit-body">
-                                            <h6 class="cart-inline-name"><a href="single-product.html">Zoo Fun Dog
-                                                    Collars</a></h6>
-                                            <div>
-                                                <div class="group-xs group-middle">
-                                                    <div class="table-cart-stepper">
-                                                        <input class="form-input" type="number" data-zeros="true"
-                                                               value="1" min="1" max="1000"/>
-                                                    </div>
-                                                    <h6 class="cart-inline-title">$11.00</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cart-inline-footer">
-                                <div class="group-sm"><a class="button button-primary-outline button-zakaria"
-                                                         href="cart-page.html">Go to cart</a><a
-                                        class="button button-primary button-zakaria"
-                                        href="checkout.html">Checkout</a></div>
-                            </div>
-                        </div>
+                    <div class="rd-navbar-basket-wrap"><strong>Sepetim</strong>
+
+                        <a class="rd-navbar-basket fl-bigmug-line-shopping202" href="{{route('user_shopcart')}}">
+                            <span>{{\App\Http\Controllers\ShopcartController::countshopcart()}}</span></a>
+
                     </div>
-                    <a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202 rd-navbar-fixed-element-2"
-                       href="cart-page.html"><span>2</span></a>
+
                 </div>
+                <div class="col-2" style="margin-left: 70%">
+                    @include('home.message')
+                </div>
+
             </div>
+
+        </nav>
     </div>
-    </nav>
-    </div>
+
 </header>

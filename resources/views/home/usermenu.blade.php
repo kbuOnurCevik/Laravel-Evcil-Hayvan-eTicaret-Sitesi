@@ -8,6 +8,7 @@
                         <ul class="list-marked d-inline-block d-inline-md-block">
                             <li><a href="{{route('myprofile')}}">My Profile</a></li>
                             <li><a href="{{route('user_products')}}">My Products</a></li>
+                            <li><a href="{{route('user_shopcart')}}">My Shopcart</a></li>
                             <li><a href="{{route('logout')}}">Logout </a></li>
                         </ul>
                     </div>

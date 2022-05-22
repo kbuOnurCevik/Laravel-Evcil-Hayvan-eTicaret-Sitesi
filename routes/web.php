@@ -3,7 +3,9 @@
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopcartController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +20,7 @@ Route::get('/references',[\App\Http\Controllers\HomeController::class,'reference
 Route::post('/sendmessage',[\App\Http\Controllers\HomeController::class,'sendmessage'])->name('sendmessage') ;
 Route::get('/product/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'product'])->name('product') ;
 Route::get('/categoryproducts/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'categoryproducts'])->name('categoryproducts') ;
-Route::get('/addtocart/{id}',[\App\Http\Controllers\HomeController::class,'addtocart'])->name('addtocart') ;
+#Route::get('/addtocart/{id}',[\App\Http\Controllers\HomeController::class,'addtocart'])->name('addtocart') ;
 Route::post('/getproduct',[\App\Http\Controllers\HomeController::class,'getproduct'])->name('getproduct') ;
 Route::get('/productlist/{search}',[\App\Http\Controllers\HomeController::class,'productlist'])->name('productlist') ;
 
@@ -123,10 +125,20 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function () 
     # Product Image Galery
     Route::prefix('image')->group(function () {
 
-        Route::get('create/{product_id}',[\App\Http\Controllers\Admin\ImageController::class,'create'])->name('user_image_add');
-        Route::post('store/{product_id}',[\App\Http\Controllers\Admin\ImageController::class,'store'])->name('user_image_store');
+        Route::get('create/{product_id}',[ImageController::class,'create'])->name('user_image_add');
+        Route::post('store/{product_id}',[ImageController::class,'store'])->name('user_image_store');
         Route::get('delete/{id}/{product_id}',[\App\Http\Controllers\Admin\ImageController::class,'destroy'])->name('user_image_delete');
-        Route::get('show',[\App\Http\Controllers\Admin\ImageController::class,'show'])->name('user_image_show');
+        Route::get('show',[ImageController::class,'show'])->name('user_image_show');
+    });
+
+    # Product
+    Route::prefix('shopcart')->group(function () {
+
+        Route::get('/', [ShopcartController::class, 'index'])->name('user_shopcart');
+        Route::post('store/{id}', [ShopcartController::class, 'store'])->name('user_shopcart_add');
+        Route::post('update/{id}', [ShopcartController::class, 'update'])->name('user_shopcart_update');
+        Route::get('delete/{id}', [ShopcartController::class, 'destroy'])->name('user_shopcart_delete');
+
     });
 
 
