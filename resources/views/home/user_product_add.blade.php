@@ -28,17 +28,20 @@
         </div>
     </section>
 
-    <section class="section section-sm bg-default text-start" style="margin-top: -50px" >
+    <section class="section section-sm bg-default text-start" style="margin-top: -50px">
         <div class="container-fluid  grid-demonstration">
             <div class="row">
                 <div class="col-12">
-                    <div class="table-custom-responsive" >
+                    <div class="table-custom-responsive">
                         <table class="table-custom table-custom-bordered">
                             <thead>
                             <tr>
-                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('myprofile')}}">My Profile</a></th>
-                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_products')}}">My Products</a></th>
-                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('logout')}}">Logout </a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('myprofile')}}">My
+                                        Profile</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_products')}}">My
+                                        Products</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a"
+                                                               href="{{route('logout')}}">Logout </a></th>
 
                             </thead>
                         </table>
@@ -135,7 +138,8 @@
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
                                             <p style="color: #0d0a0a"><strong>Ürün Detaylarını Giriniz.</strong></p>
-                                            <textarea style="width: 500px;height: 100px" id="detailid" name="detail"></textarea>
+                                            <textarea style="width: 500px;height: 100px" id="detailid"
+                                                      name="detail"></textarea>
                                             <script>
                                                 CKEDITOR.replace('detail');
                                             </script>
@@ -179,7 +183,9 @@
                             </div>
 
 
-                            <button class="button button-lg button-primary button-zakaria" type="submit" style="background-color: #0da8ee">Ürünü Ekle</button>
+                            <button class="button button-lg button-primary button-zakaria" type="submit"
+                                    style="background-color: #0da8ee">Ürünü Ekle
+                            </button>
                         </form>
                     </div>
                 </div>

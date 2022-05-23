@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title','Sepetim')
+@section('title','Order İtem')
 
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="parallax-container" data-parallax-img="{{asset('assets')}}/images/breadcrumbs-bg.jpg">
             <div class="breadcrumbs-custom-body parallax-content context-dark">
                 <div class="container">
-                    <h2 class="breadcrumbs-custom-title">My Products</h2>
+                    <h2 class="breadcrumbs-custom-title">Order İtem</h2>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="{{route('home')}}">Home</a></li>
                     <li><a href="#">My Profile</a></li>
-                    <li class="active">Sepetim</li>
+                    <li class="active">Order İtem</li>
                 </ul>
             </div>
         </div>
@@ -71,7 +71,8 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
-                        <th>Delete</th>
+                        <th>Status</th>
+                        <th>Durum</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -90,24 +91,15 @@
                             </td>
 
                             <td>{{$rs->product->price}}₺</td>
-                            <td>
-                                <form action="{{route('user_shopcart_update',['id'=>$rs->id])}}" method="post">
-                                    @csrf
-                                    <input type="number" name="quantity" data-zeros="true" value="{{$rs->quantity}}"
-                                           min="1" max="{{$rs->product->quantity}}" onchange="this.form.submit()">
-                                </form>
-                            </td>
-                            <td>{{$rs->product->price * $rs->quantity}}₺</td>
-                            <td><a href="{{route('user_shopcart_delete',['id'=>$rs->id])}}"
-                                   onclick="return confirm('Deleting ! Are you sure?')">
-                                    <img src="{{asset('assets/admin/img')}}/delete.png" height="23" width="23"></a>
-                            </td>
+                            <td>{{$rs->quantity}}</td>
+                            <td>{{$rs->amount}}₺</td>
+                            <td>{{$rs->status}}₺</td>
+                            <td>{{$rs->note}}</td>
 
                         </tr>
                         @php
                             $total += $rs->product->price * $rs->quantity;
                         @endphp
-
                     @endforeach
                     </tbody>
                 </table>
@@ -126,12 +118,7 @@
                                 <div class="heading-3 fw-normal">{{$total}}₺</div>
                             </div>
                         </div>
-                        <form action="{{route('user_order_add')}}" method="post">
-                            @csrf
-                            <input type="hidden" name="total" value="{{$total}}">
-                            <button type="submit" class="button button-lg button-primary button-zakaria"  >Place
-                                Order</button>
-                        </form>
+
                     </div>
                 </div>
             </div>
