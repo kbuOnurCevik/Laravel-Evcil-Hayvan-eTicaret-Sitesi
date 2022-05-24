@@ -6,7 +6,7 @@
     <!-- Container Fluid-->
     <div class="container-fluid" id="container-wrapper">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Blank Page</h1>
+            <h1 class="h3 mb-0 text-gray-800">Order List</h1>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin_home')}}">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Order List</li>
@@ -38,7 +38,10 @@
                             @foreach($datalist as $rs)
                                 <tbody>
                                 <td>{{$rs->id}}</td>
-                                <td>{{$rs->user->name}}</td>
+                                <td>
+                                    <a href="{{route('admin_user_show',['id'=>$rs->user->id])}}"
+                                       onclick="return !window.open(this.href, '','top=50 left=100 width=1000 height=800')">{{$rs->user->name}}</a>
+                                </td>
                                 <td>{{$rs->name}}</td>
                                 <td>{{$rs->phone}}</td>
                                 <td>{{$rs->email}}</td>
@@ -46,7 +49,8 @@
                                 <td>{{$rs->created_at}}</td>
                                 <td>{{$rs->status}}</td>
                                 <td>
-                                    <a href="{{route('admin_order_show',['id'=>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=800')">
+                                    <a href="{{route('admin_order_show',['id'=>$rs->id])}}"
+                                       onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=800')">
                                         <img src="{{asset('assets/admin/img')}}/edit.jpg" height="25"></a>
                                 </td>
                                 <td>{{$rs->note}}</td>
@@ -57,13 +61,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
 
 
     </div>
