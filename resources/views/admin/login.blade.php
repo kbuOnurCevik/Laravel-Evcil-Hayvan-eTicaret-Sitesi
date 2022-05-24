@@ -29,6 +29,7 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Giriş Yap</h1>
                                 </div>
+                                @include('home.message')
                                 <form action="{{route('admin_logincheck')}}" method="post" class="user">
                                     @csrf
                                     <div class="form-group">

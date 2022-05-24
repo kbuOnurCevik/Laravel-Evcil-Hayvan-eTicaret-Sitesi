@@ -29,6 +29,9 @@ Route::get('/productlist/{search}',[\App\Http\Controllers\HomeController::class,
 
 Route::middleware('auth')->prefix('admin')->group(function () {
 
+    #Admin Role
+    Route::middleware('admin')->group(function() {
+
     Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
 
     #Category
@@ -100,7 +103,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('show/{id}', [AdminOrderController::class, 'show'])->name('admin_order_show');
     });
 
-});
+});#admin
+});#auth
 
 Route::get('/login',[\App\Http\Controllers\Admin\HomeController::class,'login'])->name('login');
 Route::post('/admin/logincheck', [\App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name('admin_logincheck');
