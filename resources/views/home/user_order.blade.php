@@ -75,6 +75,7 @@
                                 <th style="cursor: pointer">Total</th>
                                 <th style="cursor: pointer">Date</th>
                                 <th style="cursor: pointer">Status</th>
+                                <th style="cursor: pointer">Note</th>
                                 <th style="cursor: pointer">Edit</th>
                             </tr>
                             </thead>
@@ -88,6 +89,8 @@
                                     <td>{{$rs->total}}</td>
                                     <td>{{$rs->created_at}}</td>
                                     <td>{{$rs->status}}</td>
+                                    <td>{{$rs->note}}</td>
+
                                     <td><a href="{{route('user_order_show',['id'=>$rs->id])}}"><img
                                                 src="{{asset('assets/admin/img')}}/edit.jpg" height="23" width="23"></a>
                                     </td>

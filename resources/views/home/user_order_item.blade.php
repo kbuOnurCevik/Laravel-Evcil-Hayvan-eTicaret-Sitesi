@@ -71,7 +71,6 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
-                        <th>Status</th>
                         <th>Durum</th>
                     </tr>
                     </thead>
@@ -93,7 +92,6 @@
                             <td>{{$rs->product->price}}₺</td>
                             <td>{{$rs->quantity}}</td>
                             <td>{{$rs->amount}}₺</td>
-                            <td>{{$rs->status}}₺</td>
                             <td>{{$rs->note}}</td>
 
                         </tr>

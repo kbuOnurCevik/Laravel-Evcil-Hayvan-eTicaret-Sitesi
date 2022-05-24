@@ -20,6 +20,23 @@
      </li>
 
     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
+           aria-controls="collapseTable">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Orders</span>
+        </a>
+        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Orders</h6>
+                <a class="collapse-item" href="{{route('admin_orders')}}">All Orders</a>
+                <a class="collapse-item" href="{{route('admin_order_list',['status'=>'new'])}}">New Orders</a>
+                <a class="collapse-item" href="{{route('admin_order_list',['status'=>'canceled'])}}">Canceled Orders</a>
+                <a class="collapse-item" href="{{route('admin_order_list',['status'=>'completed'])}}">Completed Orders</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_setting')}}"
            aria-controls="collapseForm">
             <i class="fab fa-fw fa-wpforms"></i>
