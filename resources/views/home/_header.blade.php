@@ -127,7 +127,9 @@
 
 
                             </form>
+                            @section('footerjs')
                             @livewireScripts
+                            @endsection
                         </div>
 
                     </div>

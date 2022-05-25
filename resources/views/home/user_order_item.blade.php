@@ -36,6 +36,15 @@
                                 <th style="cursor: pointer"><a href="{{route('user_products')}}">My Products</a></th>
                                 <th style="cursor: pointer"><a href="{{route('user_shopcart')}}">My Shopcart</a></th>
                                 <th style="cursor: pointer"><a href="{{route('logout')}}">Logout </a></th>
+                                <th style="cursor: pointer">
+                                    @php
+                                        $userRoles = Auth::user()->roles->pluck('name');
+                                    @endphp
+
+                                    @if($userRoles->contains('admin'))
+                                        <a href="{{route('admin_home')}}" target="_blank">Admin Panel</a>
+                                    @endif
+                                </th>
 
                             </thead>
                         </table>

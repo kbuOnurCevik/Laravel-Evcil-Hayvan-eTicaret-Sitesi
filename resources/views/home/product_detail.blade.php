@@ -108,6 +108,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Bootstrap tabs-->
             <div class="tabs-custom tabs-horizontal tabs-line" id="tabs-1">
                 <!-- Nav tabs-->
@@ -121,82 +122,67 @@
                                                                     data-bs-toggle="tab">Delivery and payment</a></li>
                     </ul>
                 </div>
+
                 <!-- Tab panes-->
                 <div class="tab-content tab-content-1">
                     <div class="tab-pane fade show active" id="tabs-1-1">
-                        <div class="box-comment">
-                            <div class="unit flex-column flex-sm-row unit-spacing-md">
-                                <div class="unit-left"><a class="box-comment-figure" href="#"><img
-                                            src="images/user-1-119x119.jpg" alt="" width="119" height="119"/></a></div>
-                                <div class="unit-body">
-                                    <div class="group-sm group-justify">
-                                        <div>
-                                            <div class="group-xs group-middle">
-                                                <h5 class="box-comment-author"><a href="#">Jane Doe</a></h5>
-                                                <div class="box-rating"><span class="icon mdi mdi-star"></span><span
-                                                        class="icon mdi mdi-star"></span><span
-                                                        class="icon mdi mdi-star"></span><span
-                                                        class="icon mdi mdi-star"></span><span
-                                                        class="icon mdi mdi-star-half"></span></div>
+
+
+                        @foreach($reviews as $rs)
+
+                            <div class="box-comment">
+                                <div class="unit flex-column flex-sm-row unit-spacing-md">
+                                    <div class="unit-left"><a class="box-comment-figure"><img
+                                                src="{{Storage::url($rs->product->image)}}" alt="" width="119" height="119"/></a>
+                                    </div>
+                                    <div class="unit-body">
+                                        <div class="group-sm group-justify">
+                                            <div>
+                                                <div class="group-xs group-middle">
+                                                    <h5 class="box-comment-author">{{$rs->user->name}}</h5>
+
+                                                    <div class="box-rating"><span class="icon mdi mdi-star"></span><span
+                                                            class="icon mdi mdi-star"></span><span
+                                                            class="icon mdi mdi-star"></span><span
+                                                            class="icon mdi mdi-star"></span><span
+                                                            class="icon mdi mdi-star-half"></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="box-comment-time">
+                                                <time>{{$rs->created_at}}</time>
                                             </div>
                                         </div>
-                                        <div class="box-comment-time">
-                                            <time datetime="2020-11-30">Nov 30, 2020</time>
-                                        </div>
+                                        <h5 class="box-comment-author"> {{$rs->subject}}</h5>
+                                        <p class="box-comment-text"> {{$rs->review}}</p>
                                     </div>
-                                    <p class="box-comment-text">Lorem ipsum dolor sit amet, has mutat labores nostrum
-                                        ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus
-                                        gloriatur. Id has habeo regione, explicari hendrerit reprimique cum te.</p>
                                 </div>
                             </div>
-                        </div>
+
+                        @endforeach
+
+
                         <h4 class="text-transform-none fw-medium">Leave a Review</h4>
-                        <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact"
-                              method="post" action="bat/rd-mailform.php">
-                            <div class="row row-20 row-md-30">
-                                <div class="col-lg-8">
-                                    <div class="row row-20 row-md-30">
-                                        <div class="col-sm-6">
-                                            <div class="form-wrap">
-                                                <input class="form-input" id="contact-first-name-2" type="text"
-                                                       name="name" data-constraints="@Required"/>
-                                                <label class="form-label" for="contact-first-name-2">First Name</label>
-                                            </div>
+
+                        <section class="section section-xxl bg-default text-md-left" style="margin-top: -50px">
+                            <div class="container">
+                                <div class="row row-40 justify-content-center justify-content-md-between">
+                                    <div class="col-12">
+                                        <div class="inset-xl-right-70">
+
+
+                                            @livewire('review',['id'=>$data->id])
+
+
                                         </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-wrap">
-                                                <input class="form-input" id="contact-last-name-2" type="text"
-                                                       name="name" data-constraints="@Required"/>
-                                                <label class="form-label" for="contact-last-name-2">Last Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-wrap">
-                                                <input class="form-input" id="contact-email-2" type="email" name="email"
-                                                       data-constraints="@Email @Required"/>
-                                                <label class="form-label" for="contact-email-2">E-mail</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-wrap">
-                                                <input class="form-input" id="contact-phone-2" type="text" name="phone"
-                                                       data-constraints="@Numeric"/>
-                                                <label class="form-label" for="contact-phone-2">Phone</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-wrap">
-                                        <label class="form-label" for="contact-message-2">Message</label>
-                                        <textarea class="form-input textarea-lg" id="contact-message-2" name="phone"
-                                                  data-constraints="@Required"></textarea>
                                     </div>
                                 </div>
                             </div>
-                            <button class="button button-lg button-primary button-zakaria" type="submit">Submit</button>
-                        </form>
+                        </section>
+
+
                     </div>
+
+
                     <div class="tab-pane fade" id="tabs-1-2">
                         <div class="single-product-info">
                             <div class="unit unit-spacing-md flex-column flex-sm-row align-items-sm-center">
@@ -208,6 +194,8 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div class="tab-pane fade" id="tabs-1-3">
                         <div class="single-product-info">
                             <div class="unit unit-spacing-md flex-column flex-sm-row align-items-sm-center">
@@ -222,6 +210,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
