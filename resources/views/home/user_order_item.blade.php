@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title','Order İtem')
+@section('title','Sipariş Sepeti')
 
 
 @section('content')
@@ -9,16 +9,16 @@
         <div class="parallax-container" data-parallax-img="{{asset('assets')}}/images/breadcrumbs-bg.jpg">
             <div class="breadcrumbs-custom-body parallax-content context-dark">
                 <div class="container">
-                    <h2 class="breadcrumbs-custom-title">Order İtem</h2>
+                    <h2 class="breadcrumbs-custom-title">Sipariş Sepeti</h2>
                 </div>
             </div>
         </div>
         <div class="breadcrumbs-custom-footer">
             <div class="container">
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="{{route('home')}}">Home</a></li>
-                    <li><a href="#">My Profile</a></li>
-                    <li class="active">Order İtem</li>
+                    <li><a href="{{route('home')}}">Anasayfa</a></li>
+                    <li><a href="{{route('myprofile')}}">Profilim</a></li>
+                    <li class="active">Sipariş Sepeti</li>
                 </ul>
             </div>
         </div>
@@ -29,22 +29,21 @@
             <div class="row">
                 <div class="col-12">
                     <div class="table-custom-responsive">
-                        <table class="table-custom table-custom-striped table-custom-primary">
+                        <table class="table-custom table-custom-bordered">
                             <thead>
                             <tr>
-                                <th style="cursor: pointer"><a href="{{route('myprofile')}}">My Profile</a></th>
-                                <th style="cursor: pointer"><a href="{{route('user_products')}}">My Products</a></th>
-                                <th style="cursor: pointer"><a href="{{route('user_shopcart')}}">My Shopcart</a></th>
-                                <th style="cursor: pointer"><a href="{{route('logout')}}">Logout </a></th>
-                                <th style="cursor: pointer">
-                                    @php
-                                        $userRoles = Auth::user()->roles->pluck('name');
-                                    @endphp
-
-                                    @if($userRoles->contains('admin'))
-                                        <a href="{{route('admin_home')}}" target="_blank">Admin Panel</a>
-                                    @endif
-                                </th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('myprofile')}}">PROFİLİM</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_products')}}">ÜRÜNLERİM</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_orders')}}">SİPARİŞLERİM</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_shopcart')}}">SEPETİM</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('myreviews')}}">YORUMLARIM</a></th>
+                                @php
+                                    $userRoles = Auth::user()->roles->pluck('name');
+                                @endphp
+                                @if($userRoles->contains('admin'))
+                                    <th><a style="color: #0d0a0a" style="cursor: pointer" href="{{route('admin_home')}}" target="_blank">ADMİN PANELİ</a></th>
+                                @endif
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('logout')}}">Çıkış Yap</a></th>
 
                             </thead>
                         </table>
@@ -58,9 +57,8 @@
     <section class="section section-sm text-center" style="margin-top: -100px">
         <div class="container">
             <div class="title-group">
-                <h3>Ürünlerim</h3>
-                <p class="big font-family-sans-serif-1">Ürünlerinizi görüntülemektesiniz ve bunları
-                    yönetebilirsiniz.</p>
+                <h3>Sipariş Sepeti</h3>
+                <p class="big font-family-sans-serif-1">Siparişinizin sepetini görüntülemektesiniz.</p>
             </div>
             <div class="title-group">
                 <p class="big font-family-sans-serif-1"> @include('home.message')</p>
@@ -69,18 +67,18 @@
     </section>
 
     <!-- Shopping Cart-->
-    <section class="section section-xl bg-default">
+    <section class="section section-xl bg-default" style="margin-top: -50px">
         <div class="container">
             <!-- shopping-cart-->
             <div class="table-custom-responsive">
                 <table class="table-custom table-cart">
                     <thead>
                     <tr>
-                        <th>Product name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th>Durum</th>
+                        <th>Ürün İsmi ve Resmi</th>
+                        <th>Fiyat</th>
+                        <th>Miktar</th>
+                        <th>Toplam</th>
+                        <th>Not</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -121,7 +119,7 @@
                     <div class="group-xl group-middle">
                         <div>
                             <div class="group-md group-middle">
-                                <div class="heading-5 fw-medium text-gray-500">Total</div>
+                                <div class="heading-5 fw-medium text-gray-500">Toplam</div>
                                 <div class="heading-3 fw-normal">{{$total}}₺</div>
                             </div>
                         </div>

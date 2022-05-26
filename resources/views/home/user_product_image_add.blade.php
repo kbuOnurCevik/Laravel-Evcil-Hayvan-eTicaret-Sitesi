@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Image Gallery</title>
+    <title>Resim Galerisi</title>
     <link href="{{asset('assets')}}/admin/img/logo/logo.png" rel="icon">
     <title>@yield('title')</title>
     <link href="{{asset('assets')}}/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -13,7 +13,7 @@
 <div class="card mb-4">
 
     <div class="card-body">
-        <h3 class="card-title">Product : {{$data->title}}</h3>
+        <h3 class="card-title">Ürün : {{$data->title}}</h3>
         <div class="row col-lg-4">
             @include('home.message')
         </div>
@@ -21,24 +21,24 @@
             @csrf
 
             <div class="form-group">
-                <label><b>Title</b></label>
+                <label><b>Başlık</b></label>
                 <input type="text" name="title" class="form-control">
             </div>
             <div class="form-group">
-                <label><b>Image</b></label>
+                <label><b>Resim</b></label>
                 <input type="file" name="image" class="form-control">
             </div>
 
-            <button type="submit" class="btn btn-primary">Add Image</button>
+            <button type="submit" class="btn btn-primary">Resim Ekle</button>
         </form>
 
         <table class="table align-items-center table-flush" id="dataTable">
             <thead class="thead-light">
             <tr>
                 <th>Id</th>
-                <th>Title(s)</th>
-                <th>Image</th>
-                <th>Actions</th>
+                <th>Başlık</th>
+                <th>Resim</th>
+                <th>Sil</th>
             </tr>
             </thead>
             <tbody>
