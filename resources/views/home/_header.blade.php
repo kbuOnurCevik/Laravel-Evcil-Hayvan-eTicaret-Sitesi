@@ -91,7 +91,9 @@
                                         <li class="rd-megamenu-item flex-grow-1 flex-shrink-0">
                                             <div class="rd-megamenu-title"><span
                                                     class="rd-megamenu-icon linear-icon mdi mdi-layers"></span><span
-                                                    class="rd-megamenu-text">{{$rs->title}}</span></div>
+                                                    class="rd-megamenu-text"><a
+                                                        href="{{route('productlist',['search'=>$rs->title])}}">{{$rs->title}}</a></span>
+                                            </div>
                                             <ul class="rd-megamenu-list">
                                                 @if(count($rs->children))
                                                     <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
@@ -128,7 +130,7 @@
 
                             </form>
                             @section('footerjs')
-                            @livewireScripts
+                                @livewireScripts
                             @endsection
                         </div>
 

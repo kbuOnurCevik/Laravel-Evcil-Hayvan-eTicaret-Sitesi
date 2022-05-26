@@ -19,7 +19,9 @@ class HomeController extends Controller
 
     public static function categoryList()
     {
-        return Category::where('parent_id', '=', 0)->with('children')->get();
+        return Category::where('status', '=', 'true')->where('parent_id', '=', 0)->with('children', function ($q) {
+            $q->where('status', '=', 'true');
+        })->get();
     }
 
     public static function getsetting()
@@ -30,10 +32,31 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        $slider = Product::select('id', 'title', 'image', 'price', 'slug')->limit(4)->get();
-        $daily = Product::select('id', 'title', 'image', 'price', 'slug')->limit(3)->inRandomOrder()->get();
-        $last = Product::select('id', 'title', 'image', 'price', 'slug')->limit(3)->orderByDesc('id')->get();
-        $picked = Product::select('id', 'title', 'image', 'price', 'slug')->limit(3)->inRandomOrder()->get();
+
+        $slider = Product::whereHas('category', function ($q) {
+            $q->whereHas('parent', function ($q2) {
+                $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
+            })->where('status', '=', 'true');
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(4)->inRandomOrder()->get();
+
+        $daily = Product::whereHas('category', function ($q) {
+            $q->whereHas('parent', function ($q2) {
+                $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
+            })->where('status', '=', 'true');
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(3)->inRandomOrder()->get();
+
+        $last = Product::whereHas('category', function ($q) {
+            $q->whereHas('parent', function ($q2) {
+                $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
+            })->where('status', '=', 'true');
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(3)->orderByDesc('id')->get();
+
+        $picked = Product::whereHas('category', function ($q) {
+            $q->whereHas('parent', function ($q2) {
+                $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
+            })->where('status', '=', 'true');
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(3)->inRandomOrder()
+            ->get();
 
         $data = [
             'setting' => $setting,
@@ -58,35 +81,45 @@ class HomeController extends Controller
     {
         $data = Product::find($id);
         $datalist = Image::where('product_id', $id)->get();
-        $reviews = \App\Models\Review::where('product_id',$id)->get();
-        return view('home.product_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
+        $reviews = \App\Models\Review::where('product_id', $id)->where('status', '=', 'true')->get();
+        return view('home.product_detail', ['data' => $data, 'datalist' => $datalist, 'reviews' => $reviews]);
     }
 
     public function getproduct(Request $request)
     {
         $search = $request->input('search');
-        $count = Product::where('title', 'like', '%' . $search . '%')->get()->count();
 
-        if ($count == 1) {
-            $data = Product::where('title', 'like', '%' . $search . '%')->first();
-            return redirect()->route('product', ['id' => $data->id, 'slug' => $data->slug]);
+
+        if ($search !== null) {
+            $count = Product::where('status', '=', 'true')->where('title', 'like', '%' . $search . '%')->get()->count();
+
+            if ($count == 1) {
+                $data = Product::where('status', '=', 'true')->where('title', 'like', '%' . $search . '%')->first();
+                return redirect()->route('product', ['id' => $data->id, 'slug' => $data->slug]);
+            } else {
+                return redirect()->route('productlist', ['search' => $search]);
+            }
         } else {
-            return redirect()->route('productlist', ['search' => $search]);
+            return redirect()->route('home');
         }
     }
+
     public function productlist($search)
     {
-        $datalist = Product::where('title','like','%'.$search.'%')->get();
-        return view('home.search_products',['search'=>$search,'datalist'=>$datalist]);
+        $datalist = Product::where('title', 'like', '%' . $search . '%')->whereHas('category', function ($q) {
+            $q->whereHas('parent', function ($q2) {
+                $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
+            })->where('status', '=', 'true');
+        })->where('status', '=', 'true')->get();
+        return view('home.search_products', ['search' => $search, 'datalist' => $datalist]);
     }
 
 
     public function categoryproducts($id, $slug)
     {
-        $datalist = Product::where('category_id', $id)->get();
+        $datalist = Product::where([['category_id', $id], ['status', '=', 'true']])->get();
         $data = Category::find($id);
-        #print_r($data);
-        #exit();
+
         return view('home.category_products', ['data' => $data, 'datalist' => $datalist]);
     }
 
@@ -104,8 +137,8 @@ class HomeController extends Controller
 
     public function faq()
     {
-        $datalist = Faq::all()->sortBy('position');
-        return view('home.faq',['datalist'=>$datalist]);
+        $datalist = Faq::where('status', '=', 'true')->get()->sortBy('position');
+        return view('home.faq', ['datalist' => $datalist]);
     }
 
     public function contact()
