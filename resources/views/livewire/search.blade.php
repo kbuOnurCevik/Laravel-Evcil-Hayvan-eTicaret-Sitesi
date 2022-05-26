@@ -1,6 +1,6 @@
 <div>
     <input wire:model="search" name="search" type="text" class="input to-search" list="mylist"
-           placeholder="Search Product"/>
+           placeholder="Ürün Ara"/>
 
     <button class="to-search-form-submit fl-bigmug-line-search74"
             type="submit"></button>

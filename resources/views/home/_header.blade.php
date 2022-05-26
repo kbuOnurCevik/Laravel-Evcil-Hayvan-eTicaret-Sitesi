@@ -21,13 +21,12 @@
                     <div class="rd-navbar-collapse">
                         <div class="contacts-ruth">
                             <div class="unit unit-spacing-xs align-items-center">
-                                <div class="unit-left"><span class="linear-icon icon linearicons-map-marker"></span>
+                                <div class="unit-left"><span class="linear-icon icon linearicons-map-marker" style="color: #0d0a0a"></span>
                                 </div>
-                                <div class="unit-body"><a href="#">{{$setting->address}}</a></div>
+                                <div class="unit-body"><a href="http://maps.google.co.uk/maps?q=41.20637281426837,%2032.65963673582528" target="_blank">{{$setting->address}}</a></div>
                             </div>
                         </div>
-                        <a class="button button-primary-outline button-sm button-icon button-icon-left" href="#"><span
-                                class="icon mdi mdi-email-outline icon-size-m"></span>Get in touch</a>
+
                     </div>
                     <!-- RD Navbar Panel-->
                     <div class="rd-navbar-panel">
@@ -48,9 +47,9 @@
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#">{{Auth::user()->name}}</a>
                                 <!-- RD Navbar Dropdown-->
                                 <ul class="rd-menu rd-navbar-dropdown" style="margin-top: -40px">
-                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link"
-                                                                    href="{{route('myprofile')}}">My Account</a></li>
-                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{route('logout')}}">Logout</a>
+                                    <li class="rd-dropdown-item"><a style="color: #0d0a0a" class="rd-dropdown-link"
+                                                                    href="{{route('myprofile')}}">Hesabım</a></li>
+                                    <li class="rd-dropdown-item"><a style="color: #0d0a0a" class="rd-dropdown-link" href="{{route('logout')}}">Çıkış Yap</a>
                                     </li>
 
                                 </ul>
@@ -62,11 +61,11 @@
                         <div class="rd-navbar-button" style="padding-left: 40px"><a
                                 class="button button-primary-outline button-sm button-icon button-icon-left"
                                 href="#"><span
-                                    class="icon mdi  icon-size-m"></span>Login</a>
+                                    class="icon mdi  icon-size-m"></span>Giriş Yap</a>
                             <div class="rd-navbar-button"><a
                                     class="button button-primary-outline button-sm button-icon button-icon-left"
                                     href="#"><span
-                                        class="icon mdi  icon-size-m"></span>Register</a>
+                                        class="icon mdi  icon-size-m"></span>Kaydol</a>
                             </div>
                         </div>
                     @endguest
@@ -80,10 +79,10 @@
                     <div class="rd-navbar-nav-wrap">
                         <!-- RD Navbar Nav-->
                         <ul class="rd-navbar-nav">
-                            <li class="rd-nav-item active"><a class="rd-nav-link" href="/home">Home</a>
+                            <li class="rd-nav-item active"><a class="rd-nav-link" href="/home">Anasayfa</a>
                             </li>
 
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">Categories</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">KATEGORİLER</a>
                                 <!-- RD Navbar Megamenu-->
                                 <ul class="rd-menu rd-navbar-megamenu">
 
@@ -91,7 +90,7 @@
                                         <li class="rd-megamenu-item flex-grow-1 flex-shrink-0">
                                             <div class="rd-megamenu-title"><span
                                                     class="rd-megamenu-icon linear-icon mdi mdi-layers"></span><span
-                                                    class="rd-megamenu-text"><a
+                                                    class="rd-megamenu-text"><a style="color: #0d0a0a"
                                                         href="{{route('productlist',['search'=>$rs->title])}}">{{$rs->title}}</a></span>
                                             </div>
                                             <ul class="rd-megamenu-list">
@@ -107,10 +106,10 @@
                                 </ul>
                             </li>
 
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('aboutus')}}">About Us</a>
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('faq')}}">FAQ</a>
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('contact')}}">Contact</a>
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('references')}}">References</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('aboutus')}}">HAKKIMIZDA</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('faq')}}">SSS</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('contact')}}">İLETİŞİM</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('references')}}">MARKALARIMIZ</a>
 
                         </ul>
 
@@ -137,10 +136,10 @@
                     </div>
 
                     <!-- RD Navbar Basket-->
-                    <div class="rd-navbar-basket-wrap"><strong>Sepetim</strong>
+                    <div class="rd-navbar-basket-wrap"><strong style="color: #0d0a0a">Sepetim</strong>
 
                         <a class="rd-navbar-basket fl-bigmug-line-shopping202" href="{{route('user_shopcart')}}">
-                            <span>{{\App\Http\Controllers\ShopcartController::countshopcart()}}</span></a>
+                            <span style="color: #0d0a0a">{{\App\Http\Controllers\ShopcartController::countshopcart()}}</span></a>
 
                     </div>
 

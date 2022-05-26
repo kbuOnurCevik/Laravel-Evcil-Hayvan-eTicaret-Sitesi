@@ -13,9 +13,9 @@
 @section('content')
 
 
-    <section class="breadcrumbs-custom">
-        <div class="parallax-container" data-parallax-img="{{asset('assets')}}/images/breadcrumbs-bg.jpg">
-            <div class="breadcrumbs-custom-body parallax-content context-dark">
+    <section class="breadcrumbs-custom" >
+        <div class="parallax-container"  data-parallax-img="{{asset('assets')}}/images/breadcrumbs-bg.jpg">
+            <div class="breadcrumbs-custom-body parallax-content  context-dark">
                 <div class="container">
                     <h2 class="breadcrumbs-custom-title">About Us</h2>
                 </div>

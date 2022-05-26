@@ -29,12 +29,21 @@
             <div class="row">
                 <div class="col-12">
                     <div class="table-custom-responsive">
-                        <table class="table-custom table-custom-striped table-custom-primary">
+                        <table class="table-custom table-custom-bordered">
                             <thead>
                             <tr>
-                                <th style="cursor: pointer"><a href="{{route('myprofile')}}">My Profile</a></th>
-                                <th style="cursor: pointer"><a href="{{route('user_products')}}">My Products</a></th>
-                                <th style="cursor: pointer"><a href="{{route('logout')}}">Logout </a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('myprofile')}}">Profilim</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_products')}}">Ürünlerim</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_products')}}">Siparişlerim</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_products')}}">Sepetim</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_products')}}">Yorumlarım</a></th>
+                                @php
+                                    $userRoles = Auth::user()->roles->pluck('name');
+                                @endphp
+                                @if($userRoles->contains('admin'))
+                                    <th><a style="color: #0d0a0a" style="cursor: pointer" href="{{route('admin_home')}}" target="_blank">Admin Paneli</a></th>
+                                @endif
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('logout')}}">Çıkış Yap</a></th>
 
                             </thead>
                         </table>
