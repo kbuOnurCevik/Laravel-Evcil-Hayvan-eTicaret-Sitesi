@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>@yield('title')</title>
+    <link rel="icon" href="{{asset('assets')}}/images/logo.png" type="image/x-icon">
     <link href="{{asset('assets')}}/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="{{asset('assets')}}/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="{{asset('assets')}}/admin/css/ruang-admin.min.css" rel="stylesheet">

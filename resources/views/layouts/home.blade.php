@@ -11,7 +11,7 @@
     <meta name="keywords" content="@yield('keywords')">
     <meta name="author" content="Onur Çevik">
 
-    <link rel="icon" href="{{asset('assets')}}/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{asset('assets')}}/images/logo.png" type="image/x-icon">
 
     <link rel="stylesheet" type="text/css"
           href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900%7CLato%7CKalam:300,400,700">

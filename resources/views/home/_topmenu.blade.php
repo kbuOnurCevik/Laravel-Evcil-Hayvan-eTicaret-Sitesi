@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-start">
             <div class="col-xl-7 col-md-8 text-start">
-                <h1 class="lt-spacing-normal" data-caption-animate="fadeInLeft" data-caption-delay="100" style="color:#000;">e-Pati</h1>
+                <h1 class="lt-spacing-normal" data-caption-animate="fadeInLeft" data-caption-delay="100" style="color:#cabb13;">ePati</h1>
                 <!--  <h3 class="lt-spacing-75 offset-top-10 text-transform-uppercase heading-devider">Make Your pets
                       Happy</h3>-->
                 <!-- <h4 class="lt-spacing-100 offset-top-25 fw-regular" data-caption-animate="fadeInLeft"

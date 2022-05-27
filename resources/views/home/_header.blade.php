@@ -34,11 +34,11 @@
                         <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span>
                         </button>
                         <!-- RD Navbar Brand-->
-                    <!--  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark"
-                                                                                             src="{{asset('assets')}}/images/logo-default-336x120.png"
+                      <div class="rd-navbar-brand"><a class="brand"><img class="brand-logo-dark"
+                                                                                             src="{{asset('assets')}}/images/epati.png"
                                                                                              alt="" width="168"
                                                                                              height="60"/></a>
-                        </div>-->
+                        </div>
 
                     </div>
 
