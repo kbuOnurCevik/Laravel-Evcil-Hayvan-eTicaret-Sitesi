@@ -35,7 +35,7 @@
 
     <br>
     @auth
-        <button class="button button-lg button-primary button-zakaria" style="background-color: #0dcaf0;color: #0d0a0a" type="submit">Comment</button>
+        <button class="button button-lg button-primary button-zakaria" style="background-color:#0f6848;color: #FFFFFF" type="submit">Comment</button>
     @else
         <a href="/home" class="button button-lg button-primary button-zakaria">For Submit Your Review, Please Login</a>
     @endauth

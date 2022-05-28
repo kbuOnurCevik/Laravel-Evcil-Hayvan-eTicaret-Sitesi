@@ -49,7 +49,7 @@
                         <input type="number" name="price" value="{{$data->price}}" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label><b>Tax</b></label>
+                        <label><b>Quantity</b></label>
                         <input type="number" name="quantity" value="{{$data->quantity}}" class="form-control">
                     </div>
                     <div class="form-group">

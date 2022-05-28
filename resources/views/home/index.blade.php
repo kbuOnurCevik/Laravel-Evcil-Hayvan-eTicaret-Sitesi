@@ -39,7 +39,7 @@
                                     {{$rs->title}}</a></h5>
                             <div class="product-price-wrap">
                                 <!-- <div class="product-price product-price-old">$30.00</div>-->
-                                <div class="product-price">{{$rs->price}}₺</div>
+                                <div class="product-price" style="color: red">{{$rs->price}}₺</div>
                             </div>
                         </div>
 
@@ -85,7 +85,7 @@
                                     {{$rs->title}}</a></h5>
                             <div class="product-price-wrap">
                                 <!-- <div class="product-price product-price-old">$30.00</div>-->
-                                <div class="product-price">{{$rs->price}}₺</div>
+                                <div class="product-price" style="color: red">{{$rs->price}}₺</div>
                             </div>
                         </div>
 
@@ -113,12 +113,12 @@
     <section class="section section-xxl bg-gray-1">
 
         <div class="container">
-            <h2 class="wow fadeScale">Önerilen Ürünler</h2>
+            <h2 class="wow fadeScale">Tavsiye Edilen Ürünler</h2>
             <!-- Owl Carousel-->
             <div class="owl-carousel owl-style-9" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4"
                  data-margin="30" data-dots="true">
 
-            @foreach($picked  as $rs)
+            @foreach($daily  as $rs)
                 <!-- Product-->
                     <article class="product">
                         <div class="product-body">
@@ -131,7 +131,7 @@
                                     {{$rs->title}}</a></h5>
                             <div class="product-price-wrap">
                                 <!-- <div class="product-price product-price-old">$30.00</div>-->
-                                <div class="product-price">{{$rs->price}}₺</div>
+                                <div class="product-price" style="color: red">{{$rs->price}}₺</div>
                             </div>
                         </div>
 

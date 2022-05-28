@@ -100,7 +100,8 @@
                                 >Sepete Ekle
                                 </button>
                             </div>
-                        </form>
+                        </form><br><br>
+                        <p>Ürün detaylarını aşağıda inceleyebilir ve dilerseniz ürüne yorum yapabilirsiniz.</p>
 
 
                         <hr class="hr-gray-100">
@@ -114,18 +115,21 @@
                 <!-- Nav tabs-->
                 <div class="nav-tabs-wrap">
                     <ul class="nav nav-tabs nav-tabs-1 single-product-tabs">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-1"
-                                                                    data-bs-toggle="tab">Yorumlar</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2"
-                                                                    data-bs-toggle="tab">Detaylar</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3"
-                                                                    data-bs-toggle="tab">Delivery and payment</a></li>
-                    </ul>
-                </div>
 
-                <!-- Tab panes-->
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-2"
+                                                                    data-bs-toggle="tab">Detaylar</a></li>
+
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-1"
+                                                                    data-bs-toggle="tab">Yorumlar</a></li>
+
+                        <!--  <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3"
+                                                                     data-bs-toggle="tab">Delivery and payment</a></li>-->
+                     </ul>
+                 </div>
+
+                 <!-- Tab panes-->
                 <div class="tab-content tab-content-1">
-                    <div class="tab-pane fade show active" id="tabs-1-1">
+                    <div class="tab-pane fade show " id="tabs-1-1">
 
 
                         @foreach($reviews as $rs)
@@ -161,7 +165,7 @@
                         @endforeach
 
 
-                        <h4 class="text-transform-none fw-medium">Leave a Review</h4>
+                        <h4 class="text-transform-none fw-medium">Görüşlerinizi Belirtebilirsiniz.</h4>
 
                         <section class="section section-xxl bg-default text-md-left" style="margin-top: -50px">
                             <div class="container">
@@ -183,7 +187,7 @@
                     </div>
 
 
-                    <div class="tab-pane fade" id="tabs-1-2">
+                    <div class="tab-pane fade show active" id="tabs-1-2">
                         <div class="single-product-info">
                             <div class="unit unit-spacing-md flex-column flex-sm-row align-items-sm-center">
                                 <div class="unit-left"><span class="icon icon-80 mdi mdi-information-outline"></span>
@@ -196,25 +200,25 @@
                     </div>
 
 
-                    <div class="tab-pane fade" id="tabs-1-3">
-                        <div class="single-product-info">
-                            <div class="unit unit-spacing-md flex-column flex-sm-row align-items-sm-center">
-                                <div class="unit-left"><span class="icon icon-80 mdi mdi-truck-delivery"></span></div>
-                                <div class="unit-body">
-                                    <p>Placerat orci nulla pellentesque dignissim. Cursus turpis massa tincidunt dui ut
-                                        ornare lectus sit amet. Laoreet suspendisse interdum consectetur libero id
-                                        faucibus nisl tincidunt. Non nisi est sit amet. Lorem ipsum dolor sit amet
-                                        consectetur adipiscing elit pellentesque. Eget duis at tellus at urna. Magna
-                                        fringilla urna porttitor rhoncus dolor.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!--   <div class="tab-pane fade" id="tabs-1-3">
+                          <div class="single-product-info">
+                              <div class="unit unit-spacing-md flex-column flex-sm-row align-items-sm-center">
+                                  <div class="unit-left"><span class="icon icon-80 mdi mdi-truck-delivery"></span></div>
+                                  <div class="unit-body">
+                                      <p>Placerat orci nulla pellentesque dignissim. Cursus turpis massa tincidunt dui ut
+                                          ornare lectus sit amet. Laoreet suspendisse interdum consectetur libero id
+                                          faucibus nisl tincidunt. Non nisi est sit amet. Lorem ipsum dolor sit amet
+                                          consectetur adipiscing elit pellentesque. Eget duis at tellus at urna. Magna
+                                          fringilla urna porttitor rhoncus dolor.</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>-->
 
-                </div>
-            </div>
-        </div>
-    </section>
+                  </div>
+              </div>
+          </div>
+      </section>
 
-    </body>
+      </body>
 @endsection

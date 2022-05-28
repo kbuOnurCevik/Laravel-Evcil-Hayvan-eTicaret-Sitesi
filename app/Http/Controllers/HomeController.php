@@ -43,19 +43,19 @@ class HomeController extends Controller
             $q->whereHas('parent', function ($q2) {
                 $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
             })->where('status', '=', 'true');
-        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(3)->inRandomOrder()->get();
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(4)->inRandomOrder()->get();
 
         $last = Product::whereHas('category', function ($q) {
             $q->whereHas('parent', function ($q2) {
                 $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
             })->where('status', '=', 'true');
-        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(3)->orderByDesc('id')->get();
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(4)->orderByDesc('id')->get();
 
         $picked = Product::whereHas('category', function ($q) {
             $q->whereHas('parent', function ($q2) {
                 $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
             })->where('status', '=', 'true');
-        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(3)->inRandomOrder()
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(4)->inRandomOrder()
             ->get();
 
         $data = [

@@ -60,11 +60,11 @@
                     @guest()
                         <div class="rd-navbar-button" style="padding-left: 40px"><a
                                 class="button button-primary-outline button-sm button-icon button-icon-left"
-                                href="#"><span
+                                href="{{route('home_login')}}"><span
                                     class="icon mdi  icon-size-m"></span>Giriş Yap</a>
                             <div class="rd-navbar-button"><a
                                     class="button button-primary-outline button-sm button-icon button-icon-left"
-                                    href="#"><span
+                                    href="/register"><span
                                         class="icon mdi  icon-size-m"></span>Kaydol</a>
                             </div>
                         </div>

@@ -27,7 +27,7 @@
                         <div class="col-lg-12">
                             <div class="login-form">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Giriş Yap</h1>
+                                    <h1 class="h4 text-gray-900 mb-4"><strong>Giriş Yap</strong></h1>
                                 </div>
                                 @include('home.message')
                                 <form action="{{route('admin_logincheck')}}" method="post" class="user">
@@ -45,7 +45,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit"   class="btn btn-primary btn-block">Giriş Yap</button>
+                                        <button type="submit" class="btn btn-primary btn-block" style="background-color: #0f6848">Giriş Yap</button>
                                     </div>
                                     <hr>
 
@@ -53,7 +53,7 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="font-weight-bold small" href="/register">Hesabınız yok mu? Hemen Kaydol!</a>
+                                    <a class="font-weight-bold small" style="color:#000;" href="/register"><strong>Hesabınız yok mu? Hemen Kaydol!</strong></a>
                                 </div>
                                 <div class="text-center">
                                 </div>
