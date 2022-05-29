@@ -105,11 +105,20 @@
 
                                 </ul>
                             </li>
-
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('declarationlist')}}">İLANLAR</a>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('aboutus')}}">HAKKIMIZDA</a>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('faq')}}">SSS</a>
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('contact')}}">İLETİŞİM</a>
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('references')}}">MARKALARIMIZ</a>
+
+
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">Sayfalar</a>
+                                <!-- RD Navbar Dropdown-->
+                                <ul class="rd-menu rd-navbar-dropdown">
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{route('aboutus')}}">HAKKIMIZDA</a></li>
+                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{route('references')}}">MARKALARIMIZ</a></li>
+                                </ul>
+                            </li>
+
+
 
                         </ul>
 

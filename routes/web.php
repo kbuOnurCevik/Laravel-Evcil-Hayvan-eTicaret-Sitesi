@@ -24,6 +24,8 @@ Route::get('/categoryproducts/{id}/{slug}', [\App\Http\Controllers\HomeControlle
 #Route::get('/addtocart/{id}',[\App\Http\Controllers\HomeController::class,'addtocart'])->name('addtocart') ;
 Route::post('/getproduct', [\App\Http\Controllers\HomeController::class, 'getproduct'])->name('getproduct');
 Route::get('/productlist/{search}', [\App\Http\Controllers\HomeController::class, 'productlist'])->name('productlist');
+Route::get('/declarationlist', [\App\Http\Controllers\HomeController::class, 'declarationlist'])->name('declarationlist');
+Route::get('/declaration/{id}', [\App\Http\Controllers\HomeController::class, 'declaration'])->name('declaration');
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {
@@ -52,6 +54,18 @@ Route::middleware('auth')->prefix('admin')->group(function () {
             Route::post('update/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'update'])->name('admin_product_update');
             Route::get('delete/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('admin_product_delete');
             Route::get('show', [\App\Http\Controllers\Admin\ProductController::class, 'show'])->name('admin_product_show');
+        });
+
+        # Product
+        Route::prefix('declaration')->group(function () {
+
+            Route::get('/', [\App\Http\Controllers\Admin\DeclarationController::class, 'index'])->name('admin_declarations');
+            Route::get('create', [\App\Http\Controllers\Admin\DeclarationController::class, 'create'])->name('admin_declaration_add');
+            Route::post('store', [\App\Http\Controllers\Admin\DeclarationController::class, 'store'])->name('admin_declaration_store');
+            Route::get('edit/{id}', [\App\Http\Controllers\Admin\DeclarationController::class, 'edit'])->name('admin_declaration_edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Admin\DeclarationController::class, 'update'])->name('admin_declaration_update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Admin\DeclarationController::class, 'destroy'])->name('admin_declaration_delete');
+            Route::get('show', [\App\Http\Controllers\Admin\DeclarationController::class, 'show'])->name('admin_declaration_show');
         });
 
         # Message

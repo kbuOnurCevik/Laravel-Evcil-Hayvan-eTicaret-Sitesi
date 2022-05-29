@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Models\Category;
 use App\Http\Livewire\Review;
+use App\Models\Declaration;
 use App\Models\Setting;
 use App\Models\Faq;
 use App\Models\Product;
@@ -83,6 +84,19 @@ class HomeController extends Controller
         $datalist = Image::where('product_id', $id)->get();
         $reviews = \App\Models\Review::where('product_id', $id)->where('status', '=', 'true')->get();
         return view('home.product_detail', ['data' => $data, 'datalist' => $datalist, 'reviews' => $reviews]);
+    }
+
+    public function declarationlist()
+    {
+        $datalist = Declaration::where('status', '=', 'true')->get();
+        #$reviews = \App\Models\Review::where('product_id', $id)->where('status', '=', 'true')->get();
+        return view('home.declarationlist', ['datalist' => $datalist,]);
+    }
+    public function declaration($id)
+    {
+        $data = Declaration::find($id);
+        #$reviews = \App\Models\Review::where('product_id', $id)->where('status', '=', 'true')->get();
+        return view('home.declaration_detail', ['data' => $data]);
     }
 
     public function getproduct(Request $request)

@@ -51,6 +51,13 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('admin_declarations')}}"
+           aria-controls="collapseForm">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Declarations</span>
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_review')}}"
            aria-controls="collapseForm">
             <i class="fab fa-fw fa-wpforms"></i>
