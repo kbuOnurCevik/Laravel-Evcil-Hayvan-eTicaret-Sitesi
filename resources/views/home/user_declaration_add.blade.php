@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title','Ürün Ekle')
+@section('title','İlan Ekle')
 
 @section('javascript')
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
@@ -13,7 +13,7 @@
         <div class="parallax-container" data-parallax-img="{{asset('assets')}}/images/breadcrumbs-bg.jpg">
             <div class="breadcrumbs-custom-body parallax-content context-dark">
                 <div class="container">
-                    <h2 class="breadcrumbs-custom-title">Ürün Ekle</h2>
+                    <h2 class="breadcrumbs-custom-title">İlan Ekle</h2>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="{{route('home')}}">Anasayfa</a></li>
                     <li><a href="{{route('myprofile')}}">Profilim</a></li>
-                    <li class="active">Ürün Ekle</li>
+                    <li class="active">İlan Ekle</li>
                 </ul>
             </div>
         </div>
@@ -62,11 +62,8 @@
     <section class="section section-sm text-center" style="margin-top: -70px">
         <div class="container">
             <div class="title-group">
-                <h3>Ürün Ekle</h3>
-                <p class="big font-family-sans-serif-1">Tüm alanları doldurarak ürünü ekleyin.</p>
-            </div>
-            <div class="title-group">
-                <p class="big font-family-sans-serif-1"> @include('home.message')</p>
+                <h3>İlan Ekle</h3>
+                <p class="big font-family-sans-serif-1">Tüm alanları doldurarak ilanı ekleyin.</p>
             </div>
         </div>
     </section>
@@ -80,23 +77,12 @@
 
 
                         <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact"
-                              method="post" action="{{route('user_product_store')}}" enctype="multipart/form-data">
+                              method="post" action="{{route('user_declaration_store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="col-lg-12">
                                 <div class="row row-20 row-md-30">
 
 
-                                    <div class="col-sm-12">
-                                        <div class="form-wrap">
-                                            <p style="color: #0d0a0a"><strong>Kategori Seçiniz</strong></p>
-                                            <select class="form-input" name="category_id">
-                                                @foreach($datalist as $rs)
-                                                    <option
-                                                        value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
@@ -108,9 +94,9 @@
 
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
-                                            <p style="color: #0d0a0a"><strong>Anahtar Kelimeler Giriniz.</strong></p>
-                                            <input class="form-input" id="keywordsid" type="text" name="keywords"
-                                                   data-constraints="Keywords"/>
+                                            <p style="color: #0d0a0a"><strong>İletişim Numarası Giriniz.</strong></p>
+                                            <input class="form-input"  type="number" name="phone"
+                                                   data-constraints="Numara"/>
                                         </div>
                                     </div>
 
@@ -123,43 +109,16 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-6">
-                                        <div class="form-wrap">
-                                            <p style="color: #0d0a0a"><strong>Fiyat Giriniz.</strong></p>
-                                            <input class="form-input" id="priceid" type="number" name="price" value="0"
-                                                   data-constraints="Başlık giriniz"/>
 
-                                        </div>
-                                    </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
-                                            <p style="color: #0d0a0a"><strong>Miktar Giriniz.</strong></p>
-                                            <input class="form-input" id="quantityid" type="number" name="quantity"
-                                                   value="0"
-                                                   data-constraints="Quantity"/>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="form-wrap">
-                                            <p style="color: #0d0a0a"><strong>Ürün Detaylarını Giriniz.</strong></p>
+                                            <p style="color: #0d0a0a"><strong>İlan Detaylarını Giriniz.</strong></p>
                                             <textarea style="width: 500px;height: 100px" id="detailid"
                                                       name="detail"></textarea>
                                             <script>
                                                 CKEDITOR.replace('detail');
                                             </script>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-sm-6">
-                                        <div class="form-wrap">
-                                            <p style="color: #0d0a0a"><strong>Ürün İsmi Giriniz</strong></p>
-                                            <input class="form-input" id="slugid" type="text" name="slug"
-                                                   data-constraints="Slug"/>
 
                                         </div>
                                     </div>
@@ -180,7 +139,7 @@
 
 
                             <button class="button button-lg button-primary button-zakaria" type="submit"
-                                    style="background-color: #0f6848">Ürünü Ekle
+                                    style="background-color: #0f6848">İlan Ekle
                             </button>
                         </form>
                     </div>

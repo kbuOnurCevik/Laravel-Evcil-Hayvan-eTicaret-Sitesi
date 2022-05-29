@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Product;
+use App\Models\Declaration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class ProductController extends Controller
+class DeclarationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $datalist = Product::where('user_id',Auth::id())->get();
-        return view('home.user_product',['datalist'=>$datalist]);
+        $datalist = Declaration::where('user_id',Auth::id())->get();
+        return view('home.user_declaration',['datalist'=>$datalist]);
     }
 
     /**
@@ -28,8 +27,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $datalist = Category::with('children')->get();
-        return view('home.user_product_add', ['datalist' => $datalist]);
+
+        return view('home.user_declaration_add');
     }
 
     /**
@@ -40,33 +39,29 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Product;
+        $data = new Declaration();
 
         $data->title = $request->input('title');
-        $data->keywords = $request->input('keywords');
+        $data->phone = $request->input('phone');
         $data->description = $request->input('description');
         $data->slug = $request->input('slug');
         $data->status = $request->input('status');
-        $data->category_id = $request->input('category_id');
         $data->user_id =  Auth::id();
-        $data->price = $request->input('price');
-        $data->quantity = $request->input('quantity');
-        $data->tax = (int)$request->input('tax');
         $data->detail = $request->input('detail');
         if ($request->file('image') !== null){
             $data->image = Storage::putFile('images', $request->file('image'));
         }
         $data->save();
-        return redirect()->route('user_products')->with('success','Ürün başarıyla eklendi.');
+        return redirect()->route('user_declarations')->with('success','İlan başarıyla eklendi.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Declaration  $declaration
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Declaration $declaration)
     {
         //
     }
@@ -74,58 +69,51 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Declaration  $declaration
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product,$id)
+    public function edit(Declaration $declaration,$id)
     {
-        $data = Product::find($id);
-        $datalist = Category::with('children')->get();
+        $data = Declaration::find($id);
 
-
-        return view('home.user_product_edit', ['data' => $data, 'datalist' => $datalist]);
+        return view('home.user_declaration_edit', ['data' => $data]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Declaration  $declaration
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product,$id)
+    public function update(Request $request, Declaration $declaration,$id)
     {
-        $data = Product::find($id);
+        $data = Declaration::find($id);
         $data->title = $request->input('title');
-        $data->keywords = $request->input('keywords');
+        $data->phone = $request->input('phone');
         $data->description = $request->input('description');
         $data->slug = $request->input('slug');
         $data->status = $request->input('status');
-        $data->category_id = $request->input('category_id');
         $data->user_id =  Auth::id();
-        $data->price = $request->input('price');
-        $data->quantity = $request->input('quantity');
-        $data->tax = (int)$request->input('tax');
         $data->detail = $request->input('detail');
         if ($request->file('image') !== null){
             $data->image = Storage::putFile('images', $request->file('image'));
         }
         $data->save();
-        return redirect()->route('user_products')->with('success','Ürün Güncellendi');
+        return redirect()->route('user_declarations')->with('success','İlan Güncellendi');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Declaration  $declaration
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product,$id)
+    public function destroy(Declaration $declaration,$id)
     {
-
-        $data = Product::find($id);
+        $data = Declaration::find($id);
         $data->delete();
 
-        return redirect()->route('user_products')->with('success','Ürün Silindi');
+        return redirect()->route('user_declarations')->with('success','İlan Silindi.');
     }
 }

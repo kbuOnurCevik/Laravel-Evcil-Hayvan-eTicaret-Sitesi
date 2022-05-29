@@ -180,6 +180,18 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function () 
         Route::get('show', [ProductController::class, 'show'])->name('user_product_show');
     });
 
+    # Declaration
+    Route::prefix('declaration')->group(function () {
+
+        Route::get('/', [\App\Http\Controllers\DeclarationController::class, 'index'])->name('user_declarations');
+        Route::get('create', [\App\Http\Controllers\DeclarationController::class, 'create'])->name('user_declaration_add');
+        Route::post('store', [\App\Http\Controllers\DeclarationController::class, 'store'])->name('user_declaration_store');
+        Route::get('edit/{id}', [\App\Http\Controllers\DeclarationController::class, 'edit'])->name('user_declaration_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\DeclarationController::class, 'update'])->name('user_declaration_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\DeclarationController::class, 'destroy'])->name('user_declaration_delete');
+        Route::get('show', [\App\Http\Controllers\DeclarationController::class, 'show'])->name('user_declaration_show');
+    });
+
     # Product Image Galery
     Route::prefix('image')->group(function () {
 

@@ -9,6 +9,7 @@
                         <ul class="list-marked d-inline-block d-inline-md-block">
                             <li><a style="color: #0d0a0a" href="{{route('myprofile')}}">Profilim</a></li>
                             <li><a style="color: #0d0a0a" href="{{route('user_products')}}">Ürünlerim</a></li>
+                            <li><a style="color: #0d0a0a" href="{{route('user_declarations')}}">İlanlarım</a></li>
                             <li><a style="color: #0d0a0a" href="{{route('user_orders')}}">Siparişlerim</a></li>
                             <li><a style="color: #0d0a0a" href="{{route('user_shopcart')}}">Sepetim</a></li>
                             <li><a style="color: #0d0a0a" href="{{route('myreviews')}}">Yorumlarım</a></li>
