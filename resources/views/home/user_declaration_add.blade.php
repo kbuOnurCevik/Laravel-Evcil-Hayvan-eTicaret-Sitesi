@@ -2,7 +2,7 @@
 
 @section('title','İlan Ekle')
 
-@section('javascript')
+@section('headerjs')
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
 @endsection
 
@@ -40,13 +40,16 @@
                                 </th>
                                 <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_products')}}">ÜRÜNLERİM</a>
                                 </th>
-                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_declarations')}}">İLANLARIM</a></th>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a"
+                                                               href="{{route('user_declarations')}}">İLANLARIM</a></th>
                                 <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_orders')}}">SİPARİŞLERİM</a>
                                 </th>
                                 <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('user_shopcart')}}">SEPETİM</a>
                                 </th>
-                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('myreviews')}}">ÜRÜN YORUMLARIM</a>
-                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('myreviewsdec')}}">İLAN YORUMLARIM</a>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('myreviews')}}">ÜRÜN
+                                        YORUMLARIM</a>
+                                <th style="cursor: pointer"><a style="color: #0d0a0a" href="{{route('myreviewsdec')}}">İLAN
+                                        YORUMLARIM</a>
                                 </th>
                                 @php
                                     $userRoles = Auth::user()->roles->pluck('name');
@@ -91,7 +94,6 @@
                                 <div class="row row-20 row-md-30">
 
 
-
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
                                             <p style="color: #0d0a0a"><strong>Başlık Giriniz.</strong></p>
@@ -103,7 +105,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
                                             <p style="color: #0d0a0a"><strong>İletişim Numarası Giriniz.</strong></p>
-                                            <input class="form-input"  type="number" name="phone"
+                                            <input class="form-input" type="number" name="phone"
                                                    data-constraints="Numara"/>
                                         </div>
                                     </div>
@@ -117,7 +119,14 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-sm-6">
+                                        <div class="form-wrap">
+                                            <p style="color: #0d0a0a"><strong>Resim Ekleyiniz.</strong></p>
+                                            <input class="form-input" id="imageid" type="file" name="image"
+                                                   data-constraints="image"/>
 
+                                        </div>
+                                    </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
@@ -127,16 +136,6 @@
                                             <script>
                                                 CKEDITOR.replace('detail');
                                             </script>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-sm-6">
-                                        <div class="form-wrap">
-                                            <p style="color: #0d0a0a"><strong>Resim Ekleyiniz.</strong></p>
-                                            <input class="form-input" id="imageid" type="file" name="image"
-                                                   data-constraints="image"/>
 
                                         </div>
                                     </div>

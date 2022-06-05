@@ -34,7 +34,9 @@
                         <div class="aside-item col-12">
 
                             <h3 class="post-modern-title">İlan Sahibi</h3>
-                            <div class="team-info box-sm"><a class="team-info-figure" href="#"><img src="{{Storage::url($data->user->profile_photo_path)}}" alt="" width="123" height="133"/></a>
+                            <div class="team-info box-sm"><a class="team-info-figure" href="#"><img
+                                        src="{{Storage::url($data->user->profile_photo_path)}}" alt="" width="123"
+                                        height="133"/></a>
                                 <h6 class="team-info-title"><a href="#">{{$data->user->name}}</a></h6>
                                 <p class="team-info-text">{{$data->user->address}}</p>
                                 <p class="team-info-text">{{$data->user->phone}}</p>
@@ -53,15 +55,19 @@
                             <div class="col-12">
                                 <article class="post post-modern box-xxl">
                                     <div class="post-modern-panel">
-                                        <div><a class="post-modern-tag" href="{{route('declarationlist')}}">İlanlar</a></div>
+                                        <div><a class="post-modern-tag" href="{{route('declarationlist')}}">İlanlar</a>
+                                        </div>
                                         <div>
-                                            <time class="post-modern-time" datetime="2020-09-08">{{$data->created_at}}</time>
+                                            <time class="post-modern-time"
+                                                  datetime="2020-09-08">{{$data->created_at}}</time>
                                         </div>
                                     </div>
                                     <h3 class="post-modern-title">{{$data->title}}</h3>
-                                    <div class="post-modern-figure"><img src="{{Storage::url($data->image)}}" alt="" width="800" height="394"/>
+                                    <div class="post-modern-figure"><img src="{{Storage::url($data->image)}}" alt=""
+                                                                         width="800" height="394"/>
                                     </div>
-                                    <h5 class="post-modern-title">İletişim {{$data->phone}}</h5>
+                                    <h5 class="post-modern-title">İletişim {{$data->phone}}</h5><br>
+                                   <h4> <a  style="color: green" href="https://wa.me/{{$data->phone}}" target="_blank">Whatsapp  </a><i style="color: green" class="fa-brands fa-whatsapp"></i></h4>
                                     <p class="post-modern-text">{!! $data->detail !!}</p>
 
                                 </article>
@@ -73,8 +79,11 @@
                                 <div class="nav-tabs-wrap">
                                     <ul class="nav nav-tabs nav-tabs-1 single-product-tabs">
 
-                                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-1"
-                                                                                    data-bs-toggle="tab" style="color:#000;">Yorumlar</a></li>
+                                        <li class="nav-item" role="presentation"><a class="nav-link active"
+                                                                                    href="#tabs-1-1"
+                                                                                    data-bs-toggle="tab"
+                                                                                    style="color:#000;">Yorumlar</a>
+                                        </li>
 
                                     </ul>
                                 </div>
@@ -89,7 +98,8 @@
                                             <div class="box-comment">
                                                 <div class="unit flex-column flex-sm-row unit-spacing-md">
                                                     <div class="unit-left"><a class="box-comment-figure"><img
-                                                                src="{{Storage::url($rs->user->profile_photo_path)}}" alt="" width="119" height="119"/></a>
+                                                                src="{{Storage::url($rs->user->profile_photo_path)}}"
+                                                                alt="" width="50" height="50"/></a>
                                                     </div>
                                                     <div class="unit-body">
                                                         <div class="group-sm group-justify">
@@ -115,9 +125,11 @@
 
                                         <h4 class="text-transform-none fw-medium">Yorum yapabilirsiniz.</h4>
 
-                                        <section class="section section-xxl bg-default text-md-left" style="margin-top: -50px">
+                                        <section class="section section-xxl bg-default text-md-left"
+                                                 style="margin-top: -50px">
                                             <div class="container">
-                                                <div class="row row-40 justify-content-center justify-content-md-between">
+                                                <div
+                                                    class="row row-40 justify-content-center justify-content-md-between">
                                                     <div class="col-12">
                                                         <div class="inset-xl-right-70">
 
@@ -143,5 +155,5 @@
         </div>
     </section>
 
-      </body>
+    </body>
 @endsection

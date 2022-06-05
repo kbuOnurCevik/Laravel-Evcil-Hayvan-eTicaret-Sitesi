@@ -2,7 +2,7 @@
 
 @section('title','Ürün Ekle')
 
-@section('javascript')
+@section('headerjs')
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
 @endsection
 
@@ -152,19 +152,6 @@
 
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
-                                            <p style="color: #0d0a0a"><strong>Ürün Detaylarını Giriniz.</strong></p>
-                                            <textarea style="width: 500px;height: 100px" id="detailid"
-                                                      name="detail"></textarea>
-                                            <script>
-                                                CKEDITOR.replace('detail');
-                                            </script>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-sm-6">
-                                        <div class="form-wrap">
                                             <p style="color: #0d0a0a"><strong>Ürün İsmi Giriniz</strong></p>
                                             <input class="form-input" id="slugid" type="text" name="slug"
                                                    data-constraints="Slug"/>
@@ -181,6 +168,21 @@
 
                                         </div>
                                     </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-wrap">
+                                            <p style="color: #0d0a0a"><strong>Ürün Detaylarını Giriniz.</strong></p>
+                                            <textarea style="width: 500px;height: 100px" id="detailid"
+                                                      name="detail"></textarea>
+                                            <script>
+                                                CKEDITOR.replace('detail');
+                                            </script>
+
+                                        </div>
+                                    </div>
+
+
+
 
 
                                 </div>

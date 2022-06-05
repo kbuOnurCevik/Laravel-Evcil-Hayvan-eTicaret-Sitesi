@@ -103,7 +103,6 @@ class ProductController extends Controller
         $data->slug = $request->input('slug');
         $data->status = $request->input('status');
         $data->category_id = $request->input('category_id');
-        $data->user_id =  Auth::id();
         $data->price = $request->input('price');
         $data->quantity = $request->input('quantity');
         $data->tax = (int)$request->input('tax');
