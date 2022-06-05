@@ -55,7 +55,7 @@
                                     href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}"></a></div>
                             <div class="product-button"><a
                                     class="button button-secondary button-zakaria fl-bigmug-line-shopping202"
-                                    href="{{route('addtocart',['id'=>$rs->id])}}"></a></div>
+                                    href="{{route('user_shopcart_add',['id'=>$rs->id])}}"></a></div>
                         </div>
 
                     </article>

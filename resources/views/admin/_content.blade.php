@@ -121,7 +121,7 @@
         <!-- Reviews-->
         <div class="col-xl-6 col-lg-6 ">
             <div class="card">
-                <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
+                <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between" >
                     <h6 class="m-0 font-weight-bold text-light">Yorumları Denetle</h6>
                 </div>
                 <div>

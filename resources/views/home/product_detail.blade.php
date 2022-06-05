@@ -73,10 +73,8 @@
                     <div class="single-product">
                         <h3 class="text-transform-none fw-medium">{{$data->title}}</h3>
                         <div class="group-md group-middle">
-                            <div class="single-product-price">{{$data->price}}₺</div>
-                            <div class="single-product-rating"><span class="icon mdi mdi-star"></span><span
-                                    class="icon mdi mdi-star"></span><span class="icon mdi mdi-star"></span><span
-                                    class="icon mdi mdi-star"></span><span class="icon mdi mdi-star-half"></span></div>
+                            <div class="single-product-price" style="color: red">{{$data->price}}₺</div>
+
                         </div>
                         <p>{{$data->description}}</p>
                         <hr class="hr-gray-100">
@@ -137,7 +135,7 @@
                             <div class="box-comment">
                                 <div class="unit flex-column flex-sm-row unit-spacing-md">
                                     <div class="unit-left"><a class="box-comment-figure"><img
-                                                src="{{Storage::url($rs->product->image)}}" alt="" width="119" height="119"/></a>
+                                                src="{{Storage::url($rs->user->profile_photo_path)}}" alt="" width="119" height="119"/></a>
                                     </div>
                                     <div class="unit-body">
                                         <div class="group-sm group-justify">
@@ -145,11 +143,7 @@
                                                 <div class="group-xs group-middle">
                                                     <h5 class="box-comment-author">{{$rs->user->name}}</h5>
 
-                                                    <div class="box-rating"><span class="icon mdi mdi-star"></span><span
-                                                            class="icon mdi mdi-star"></span><span
-                                                            class="icon mdi mdi-star"></span><span
-                                                            class="icon mdi mdi-star"></span><span
-                                                            class="icon mdi mdi-star-half"></span></div>
+
                                                 </div>
                                             </div>
                                             <div class="box-comment-time">

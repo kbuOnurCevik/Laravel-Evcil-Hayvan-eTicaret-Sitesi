@@ -120,7 +120,7 @@ class HomeController extends Controller
 
     public function productlist($search)
     {
-        $datalist = Product::where('title', 'like', '%' . $search . '%')->whereHas('category', function ($q) {
+        $datalist = Product::where('keywords', 'like', '%' . $search . '%')->whereHas('category', function ($q) {
             $q->whereHas('parent', function ($q2) {
                 $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
             })->where('status', '=', 'true');

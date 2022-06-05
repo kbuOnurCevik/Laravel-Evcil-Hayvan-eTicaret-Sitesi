@@ -12,7 +12,7 @@ class Search extends Component
 
     public function render()
     {
-        $datalist = Product::where('title', 'like', '%' . $this->search . '%')->whereHas('category', function ($q) {
+        $datalist = Product::where('keywords', 'like', '%' . $this->search . '%')->whereHas('category', function ($q) {
             $q->whereHas('parent', function ($q2) {
                 $q2->where('parent_id', '=', 0)->where('status','=','true');
             })->where('status', '=', 'true');

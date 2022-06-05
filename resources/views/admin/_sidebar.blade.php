@@ -1,6 +1,6 @@
 <!-- Sidebar -->
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin_home')}}">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: #0f6848" href="{{route('admin_home')}}">
         <div class="sidebar-brand-text mx-3">Admin Home</div>
     </a>
 
@@ -78,53 +78,6 @@
             <span>Users</span>
         </a>
     </li>
-    <!--
-         <li class="nav-item">
-             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
-                aria-controls="collapseTable">
-                 <i class="fas fa-fw fa-table"></i>
-                 <span>Orders</span>
-             </a>
-             <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
-                 <div class="bg-white py-2 collapse-inner rounded">
-                     <h6 class="collapse-header">Orders</h6>
-                     <a class="collapse-item" href="#">All Orders</a>
-                     <a class="collapse-item" href="#">New Orders</a>
-                     <a class="collapse-item" href="#">Canceled Orders</a>
-                     <a class="collapse-item" href="#">Completed Orders</a>
-                 </div>
-             </div>
-         </li>
-
-
-         <li class="nav-item">
-             <a class="nav-link collapsed" href="#"
-                aria-controls="collapseForm">
-                 <i class="fab fa-fw fa-wpforms"></i>
-                 <span>Users</span>
-             </a>
-         </li>
-         <li class="nav-item">
-             <a class="nav-link collapsed" href="#"
-                aria-controls="collapseForm">
-                 <i class="fab fa-fw fa-wpforms"></i>
-                 <span>Contact Messages</span>
-             </a>
-         </li>
-         <li class="nav-item">
-             <a class="nav-link collapsed" href="#"
-                aria-controls="collapseForm">
-                 <i class="fab fa-fw fa-wpforms"></i>
-                 <span>Reviews</span>
-             </a>
-         </li>
-         <li class="nav-item">
-             <a class="nav-link collapsed" href="#"
-                aria-controls="collapseForm">
-                 <i class="fab fa-fw fa-wpforms"></i>
-                 <span>FAQ</span>
-             </a>
-         </li>-->
 
      <hr class="sidebar-divider">
      <div class="version" id="version-ruangadmin"></div>

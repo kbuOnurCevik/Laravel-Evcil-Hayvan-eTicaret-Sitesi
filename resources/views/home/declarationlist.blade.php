@@ -34,9 +34,11 @@
                         <div class="post-classic-content">
                             <div class="post-classic-time">
                                 <time datetime="2020-08-09">{{$rs->created_at}}</time>
+                                <h5 class="post-classic-title">İlan sahibi : {{$rs->user->name}}</h5>
+
                             </div>
                             <h5 class="post-classic-title"><a href="{{route('declaration',['id'=>$rs->id])}}">{{$rs->title}}</a></h5>
-                            <p class="post-classic-text">{{$rs->description}}</p>
+                            <p class="post-classic-text" style="color: black">{{$rs->description}}</p>
                         </div>
                     </article>
                 </div>

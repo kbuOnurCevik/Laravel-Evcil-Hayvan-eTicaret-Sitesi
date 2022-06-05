@@ -79,7 +79,7 @@
                     <div class="rd-navbar-nav-wrap">
                         <!-- RD Navbar Nav-->
                         <ul class="rd-navbar-nav">
-                            <li class="rd-nav-item active"><a class="rd-nav-link" href="/home">Anasayfa</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="/home">Anasayfa</a>
                             </li>
 
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#">KATEGORİLER</a>
@@ -91,7 +91,7 @@
                                             <div class="rd-megamenu-title"><span
                                                     class="rd-megamenu-icon linear-icon mdi mdi-layers"></span><span
                                                     class="rd-megamenu-text"><a style="color: #0d0a0a"
-                                                        href="{{route('productlist',['search'=>$rs->title])}}">{{$rs->title}}</a></span>
+                                                        href="{{route('productlist',['search'=>$rs->keywords])}}">{{$rs->title}}</a></span>
                                             </div>
                                             <ul class="rd-megamenu-list">
                                                 @if(count($rs->children))
@@ -106,7 +106,7 @@
                                 </ul>
                             </li>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('declarationlist')}}">İLANLAR</a>
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('aboutus')}}">HAKKIMIZDA</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('contact')}}">İLETİŞİM</a>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="{{route('faq')}}">SSS</a>
 
 

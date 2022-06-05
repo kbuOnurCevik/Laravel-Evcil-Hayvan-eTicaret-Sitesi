@@ -3,7 +3,7 @@
 @endphp
 @extends('layouts.home')
 
-@section('title','References ' . $setting->title)
+@section('title','Markalarımız ' . $setting->title)
 
 @section('description')
     {{$setting->description}}
@@ -17,15 +17,15 @@
         <div class="parallax-container" data-parallax-img="{{asset('assets')}}/images/breadcrumbs-bg.jpg">
             <div class="breadcrumbs-custom-body parallax-content context-dark">
                 <div class="container">
-                    <h2 class="breadcrumbs-custom-title">References</h2>
+                    <h2 class="breadcrumbs-custom-title">Markalarımız</h2>
                 </div>
             </div>
         </div>
         <div class="breadcrumbs-custom-footer">
             <div class="container">
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="{{route('home')}}">Home</a></li>
-                    <li class="active">References</li>
+                    <li><a href="{{route('home')}}">Anasayfa</a></li>
+                    <li class="active">Markalarımız</li>
                 </ul>
             </div>
         </div>
