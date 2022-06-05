@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Review;
+use App\Models\Reviewdec;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,6 +28,17 @@ class UserController extends Controller
     public function destroymyreview($id)
     {
         $data=Review::find($id);
+        $data->delete();
+        return redirect()->back()->with('success','Review Deleted');
+    }
+    public function myreviewsdec()
+    {
+        $datalist = Reviewdec::where('user_id','=',Auth::user()->id)->get();
+        return view('home.user_reviewsdec',['datalist'=>$datalist]);
+    }
+    public function destroymyreviewdec($id)
+    {
+        $data=Reviewdec::find($id);
         $data->delete();
         return redirect()->back()->with('success','Review Deleted');
     }

@@ -12,7 +12,8 @@
                             <li><a style="color: #0d0a0a" href="{{route('user_declarations')}}">İlanlarım</a></li>
                             <li><a style="color: #0d0a0a" href="{{route('user_orders')}}">Siparişlerim</a></li>
                             <li><a style="color: #0d0a0a" href="{{route('user_shopcart')}}">Sepetim</a></li>
-                            <li><a style="color: #0d0a0a" href="{{route('myreviews')}}">Yorumlarım</a></li>
+                            <li><a style="color: #0d0a0a" href="{{route('myreviews')}}">Ürün Yorumlarım</a></li>
+                            <li><a style="color: #0d0a0a" href="{{route('myreviewsdec')}}">İlan Yorumlarım</a></li>
                             @php
                                 $userRoles = Auth::user()->roles->pluck('name');
                             @endphp

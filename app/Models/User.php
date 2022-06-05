@@ -78,5 +78,8 @@ class User extends Authenticatable
     public function declarations(){
         return $this->hasMany(Declaration::class);
     }
+    public function reviewsdec(){
+        return $this->hasMany(Reviewdec::class);
+    }
 
 }

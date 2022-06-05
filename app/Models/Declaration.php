@@ -12,4 +12,7 @@ class Declaration extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function reviewsdec(){
+        return $this->hasMany(Reviewdec::class);
+    }
 }

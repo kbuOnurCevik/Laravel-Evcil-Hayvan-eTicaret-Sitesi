@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title','Yorumlarım')
+@section('title','İlan Yorumlarım')
 
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="parallax-container" data-parallax-img="{{asset('assets')}}/images/breadcrumbs-bg.jpg">
             <div class="breadcrumbs-custom-body parallax-content context-dark">
                 <div class="container">
-                    <h2 class="breadcrumbs-custom-title">Yorumlarım</h2>
+                    <h2 class="breadcrumbs-custom-title">İlan Yorumlarım</h2>
                 </div>
             </div>
         </div>
@@ -17,8 +17,8 @@
             <div class="container">
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="{{route('home')}}">Home</a></li>
-                    <li><a href="#">My Profile</a></li>
-                    <li class="active">Yorumlarım</li>
+                    <li><a href="#">Profilim</a></li>
+                    <li class="active">İlan Yorumlarım</li>
                 </ul>
             </div>
         </div>
@@ -66,8 +66,8 @@
     <section class="section section-sm text-center" style="margin-top: -100px">
         <div class="container">
             <div class="title-group">
-                <h3>Yorumlarım</h3>
-                <p class="big font-family-sans-serif-1">Yorumlarınızı görüntülemektesiniz ve bunları
+                <h3>İlan Yorumlarım</h3>
+                <p class="big font-family-sans-serif-1">İlan yorumlarınızı görüntülemektesiniz ve bunları
                     yönetebilirsiniz.</p>
             </div>
             <div class="title-group">
@@ -86,7 +86,7 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Ürün</th>
+                                <th>İlan</th>
                                 <th>Konu</th>
                                 <th>Yorum</th>
                                 <th>Durum</th>
@@ -98,13 +98,13 @@
                             @foreach($datalist as $rs)
                                 <tbody>
                                 <td>{{$rs->id}}</td>
-                                <td><a style="color:#000;" href="{{route('product',['id'=>$rs->product_id,'slug'=>$rs->product->slug])}}"
-                                       target="_blank">{{$rs->product->title}}</a></td>
+                                <td><a style="color:#000;" href="{{route('declaration',['id'=>$rs->declaration_id])}}"
+                                       target="_blank">{{$rs->declaration->title}}</a></td>
                                 <td>{{$rs->subject}}</td>
                                 <td>{{$rs->review}}</td>
                                 <td>{{$rs->status}}</td>
                                 <td>{{$rs->created_at}}</td>
-                                <td><a href="{{route('user_review_delete',['id'=>$rs->id])}}"
+                                <td><a href="{{route('user_reviewdec_delete',['id'=>$rs->id])}}"
                                        onclick="return confirm('Delete ! Are you sure ?')"> <img
                                             src="{{ asset('assets/admin/img')}}/click.png" width="40px" height="40px"
                                             alt=""></a></td>

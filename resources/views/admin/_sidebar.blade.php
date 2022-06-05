@@ -37,6 +37,22 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTablereview" aria-expanded="true"
+           aria-controls="collapseTable">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Reviews</span>
+        </a>
+        <div id="collapseTablereview" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Reviews</h6>
+                <a class="collapse-item" href="{{route('admin_review')}}">Product Reviews</a>
+                <a class="collapse-item" href="{{route('admin_reviewdec')}}">Declaration Reviews</a>
+
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_setting')}}"
            aria-controls="collapseForm">
             <i class="fab fa-fw fa-wpforms"></i>
@@ -57,13 +73,7 @@
             <span>Declarations</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('admin_review')}}"
-           aria-controls="collapseForm">
-            <i class="fab fa-fw fa-wpforms"></i>
-            <span>Reviews</span>
-        </a>
-    </li>
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_faq')}}"
            aria-controls="collapseForm">
