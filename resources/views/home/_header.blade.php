@@ -82,9 +82,9 @@
                             <li class="rd-nav-item"><a class="rd-nav-link" href="/home">Anasayfa</a>
                             </li>
 
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">KATEGORİLER</a>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="#">ÜRÜNLER</a>
                                 <!-- RD Navbar Megamenu-->
-                                <ul class="rd-menu rd-navbar-megamenu">
+                                <ul class="rd-menu rd-navbar-megamenu" style="padding-bottom: 10px">
 
                                     @foreach($parentCategories as $rs)
                                         <li class="rd-megamenu-item flex-grow-1 flex-shrink-0">

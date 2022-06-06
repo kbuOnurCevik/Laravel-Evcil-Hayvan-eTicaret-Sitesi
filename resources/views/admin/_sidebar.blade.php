@@ -4,16 +4,21 @@
         <div class="sidebar-brand-text mx-3">Admin Home</div>
     </a>
 
+
+    <li class="nav-item" style="text-align: center">
+        <span><strong>Admin Panel</strong></span>
+    </li>
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_category')}}">
-            <i class="far fa-fw fa-window-maximize"></i>
+            <i class="fa fa-list"></i>
             <span>Category</span>
         </a>
 
     </li>
      <li class="nav-item">
          <a class="nav-link collapsed" href="{{route('admin_products')}}">
-             <i class="far fa-fw fa-window-maximize"></i>
+             <i class="fa fa-shopping-basket"></i>
              <span>Products</span>
          </a>
 
@@ -22,7 +27,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
            aria-controls="collapseTable">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fa fa-credit-card"></i>
             <span>Orders</span>
         </a>
         <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
@@ -39,7 +44,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTablereview" aria-expanded="true"
            aria-controls="collapseTable">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fa fa-comments"></i>
             <span>Reviews</span>
         </a>
         <div id="collapseTablereview" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
@@ -55,36 +60,36 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_setting')}}"
            aria-controls="collapseForm">
-            <i class="fab fa-fw fa-wpforms"></i>
+            <i class="fa fa-cog"></i>
             <span>Settings</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_messages')}}"
            aria-controls="collapseForm">
-            <i class="fab fa-fw fa-wpforms"></i>
+            <i class="fa fa-envelope-open"></i>
             <span>Contact Messages</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_declarations')}}"
            aria-controls="collapseForm">
-            <i class="fab fa-fw fa-wpforms"></i>
-            <span>Declarations</span>
+            <i class="fa fa-paw"></i>
+            <span>Posts</span>
         </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_faq')}}"
            aria-controls="collapseForm">
-            <i class="fab fa-fw fa-wpforms"></i>
+            <i class="fa fa-question-circle"></i>
             <span>FAQ</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_users')}}"
            aria-controls="collapseForm">
-            <i class="fab fa-fw fa-wpforms"></i>
+            <i class="fa fa-user"></i>
             <span>Users</span>
         </a>
     </li>

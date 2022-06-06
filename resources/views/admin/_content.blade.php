@@ -96,22 +96,22 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Okunmuş Mesajlar</div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Ürün Sayısı</div>
                             @php
-                                $messageCount=0;
+                                $productCount=0;
                             @endphp
-                            @foreach($datamessage as $rs)
+                            @foreach($dataproduct as $rs)
                                 @php
-                                    $messageCount += 1;
+                                    $productCount += 1;
                                 @endphp
                             @endforeach
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$messageCount}}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$productCount}}</div>
                             <div class="mt-2 mb-0 text-muted text-xs">
                                 <span>Bu Yıl</span>
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-warning"></i>
+                            <i class="fa fa-shopping-basket fa-2x text-warning"></i>
                         </div>
                     </div>
                 </div>

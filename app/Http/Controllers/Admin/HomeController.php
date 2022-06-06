@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Message;
 use App\Models\Order;
+use App\Models\Product;
 use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,9 +19,10 @@ class HomeController extends Controller
         $lastMessages = Message::where('status', '=', 'new')->limit(10)->inRandomOrder()->get();
         $dataMessage = Message::where('status', '=', 'read')->get();
         $dataUser = User::all();
+        $dataProduct = Product::all();
         $dataOrder = Order::where('status', '=', 'completed')->get();
         return view('admin.index', ['datalist' => $dataOrder, 'datauser' => $dataUser, 'datamessage' => $dataMessage,
-            'lastmessages' => $lastMessages,'reviews'=>$reviews]);
+            'lastmessages' => $lastMessages,'dataproduct' => $dataProduct,'reviews'=>$reviews]);
     }
 
     public function login()

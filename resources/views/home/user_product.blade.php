@@ -119,7 +119,11 @@
                                            onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
                                             <img src="{{asset('assets/admin/img')}}/gallery.jpg" height="23" width="23"></a>
                                     </td>
-                                    <td>{{$rs->status}}</td>
+                                    @if ($rs->status == null)
+                                        <td>Bekleniyor</td>
+                                    @else
+                                        <td>{{$rs->status}}</td>
+                                    @endif
                                     <td><a href="{{route('user_product_edit',['id'=>$rs->id])}}"><img
                                                 src="{{asset('assets/admin/img')}}/edit.jpg" height="23" width="23"></a>
                                     </td>

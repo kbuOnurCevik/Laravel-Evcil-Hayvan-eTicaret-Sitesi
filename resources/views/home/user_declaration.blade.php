@@ -106,7 +106,13 @@
                                             <img src="{{Storage::url($rs->image)}}" height="50" width="50" alt="">
                                         @endif
                                     </td>
-                                    <td>{{$rs->status}}</td>
+                                    @if ($rs->status == null)
+                                        <td>Bekleniyor</td>
+                                    @else
+                                        <td>{{$rs->status}}</td>
+                                    @endif
+
+
                                     <td><a href="{{route('user_declaration_edit',['id'=>$rs->id])}}"><img
                                                 src="{{asset('assets/admin/img')}}/edit.jpg" height="23" width="23"></a>
                                     </td>

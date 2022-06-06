@@ -9,9 +9,9 @@
                 <h4 class="lt-spacing-100 offset-top-25 fw-regular" style="color: #0d0a0a" data-caption-animate="fadeInLeft"
                     data-caption-delay="400">ePati, ürün ve hizmetlerimizin kalitesine, rahatlığına ve bireyselliğine değer verir.</h4>
                   <div class="button-wrap" style="align-items: center" data-caption-animate="fadeInLeft" data-caption-delay="550"><a
-                          class="button button-lg button-primary" style="background-color: #0f6848;color: #FFFFFF" href="{{route('user_product_add')}}">Ürünlerinizi Satabilirsiniz</a>
+                          class="button button-lg button-primary" style="background-color: #0f6848;color: #FFFFFF" href="{{route('user_product_add')}}">ÜRÜNLERİNİZİ SATABİLİRSİNİZ</a>
                       <a
-                          class="button button-lg button-primary" style="background-color: #0f6848;margin-top: 0;margin-left: 20px;color: #FFFFFF" href="{{route('user_declaration_add')}}">Sahiplendirme veya Kayıp İlanı Ekle</a>
+                          class="button button-lg button-primary" style="background-color: #0f6848;margin-top: 0;margin-left: 20px;color: #FFFFFF" href="{{route('user_declaration_add')}}">EVCİL HAYVANLAR İÇİN İLAN OLUŞTURUN</a>
 
                   </div>
 

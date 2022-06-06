@@ -135,7 +135,7 @@
                             <div class="box-comment">
                                 <div class="unit flex-column flex-sm-row unit-spacing-md">
                                     <div class="unit-left"><a class="box-comment-figure"><img
-                                                src="{{Storage::url($rs->user->profile_photo_path)}}" alt="" width="119" height="119"/></a>
+                                                src="{{Storage::url($rs->user->profile_photo_path)}}" alt="" width="80" height="80"/></a>
                                     </div>
                                     <div class="unit-body">
                                         <div class="group-sm group-justify">
