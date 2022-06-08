@@ -59,6 +59,7 @@ class HomeController extends Controller
             })->where('status', '=', 'true');
         })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'slug')->limit(4)->inRandomOrder()
             ->get();
+        $lastdec = Declaration::where('status','=','true')->limit(3)->orderByDesc('created_at')->get();
 
         $data = [
             'setting' => $setting,
@@ -66,6 +67,7 @@ class HomeController extends Controller
             'daily' => $daily,
             'picked' => $picked,
             'last' => $last,
+            'lastdec'=>$lastdec,
             'page' => 'home'
         ];
         return view('home.index', $data);

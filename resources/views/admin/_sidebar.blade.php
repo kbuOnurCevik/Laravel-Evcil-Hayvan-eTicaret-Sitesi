@@ -5,9 +5,6 @@
     </a>
 
 
-    <li class="nav-item" style="text-align: center">
-        <span><strong>Admin Panel</strong></span>
-    </li>
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('admin_category')}}">

@@ -115,6 +115,7 @@
                                 <ul class="rd-menu rd-navbar-dropdown">
                                     <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{route('aboutus')}}">HAKKIMIZDA</a></li>
                                     <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{route('references')}}">MARKALARIMIZ</a></li>
+
                                 </ul>
                             </li>
 

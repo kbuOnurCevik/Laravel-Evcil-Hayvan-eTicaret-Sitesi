@@ -122,7 +122,7 @@
         <div class="col-xl-6 col-lg-6 ">
             <div class="card">
                 <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between" >
-                    <h6 class="m-0 font-weight-bold text-light">Yorumları Denetle</h6>
+                    <h6 class="m-0 font-weight-bold text-light">Ürün Yorumları Denetle</h6>
                 </div>
                 <div>
                     @foreach($reviews as $rs)
@@ -140,6 +140,35 @@
 
                     <div class="card-footer text-center">
                         <a class="m-0 small text-primary card-link" href="{{route('admin_messages')}}">Daha Fazlasına
+                            Göz At . <i
+                                class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews-->
+        <div class="col-xl-6 col-lg-6 ">
+            <div class="card">
+                <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between" >
+                    <h6 class="m-0 font-weight-bold text-light">İlan Yorumlarını Denetle</h6>
+                </div>
+                <div>
+                    @foreach($reviewsdec as $rs)
+                        <div class="customer-message align-items-center">
+                            <a class="font-weight-bold" href="{{route('admin_reviewdec_show',['id'=>$rs->id])}}"
+                               onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=800')">
+                                <div class="text-truncate message-title">{{$rs->subject}} · {{$rs->review}}
+                                </div>
+                                <div class="small text-gray-500 message-time font-weight-bold">{{$rs->user->name}}
+                                    · {{$rs->created_at}}</div>
+                            </a>
+                        </div>
+                    @endforeach
+
+
+                    <div class="card-footer text-center">
+                        <a class="m-0 small text-primary card-link" href="{{route('admin_declarations')}}">Daha Fazlasına
                             Göz At . <i
                                 class="fas fa-chevron-right"></i></a>
                     </div>

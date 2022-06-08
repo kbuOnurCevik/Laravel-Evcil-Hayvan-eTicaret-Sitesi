@@ -155,6 +155,51 @@
         </div>
     </section>
 
+    <section class="section section-xl bg-default">
+        <div class="container">
+            <div class="row row-30">
+
+                <h2 class="wow fadeScale">İlanlar</h2>
+
+                @foreach($lastdec as $rs)
+                    <div class="col-sm-6 col-lg-4">
+                        <!-- Post Classic-->
+                        <article class="post post-classic box-md" style="width: 80%"><a class="post-classic-figure"
+                                                                                        href="{{route('declaration',['id'=>$rs->id])}}"><img
+                                    src="{{Storage::url($rs->image)}}" alt=""/></a>
+                            <div class="post-classic-content">
+                                <div class="post-classic-time">
+                                    <time datetime="2020-08-09">{{$rs->created_at}}</time>
+                                    <h5 class="post-classic-title">İlan sahibi : {{$rs->user->name}}</h5>
+
+                                </div>
+                                <h5 class="post-classic-title">{{$rs->title}}</h5>
+                                <p class="post-classic-text" style="color: black">{{$rs->description}}</p>
+                                <div class="justify-content-center text-center" style="margin-top: 10px"><a
+                                        class="button button-sm button-primary button-zakaria"
+                                        style="background-color:#0f6848"
+                                        href="{{route('declaration',['id'=>$rs->id])}}">Detaylar</a></div>
+                            </div>
+                        </article>
+                    </div>
+                @endforeach
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section About-->
+    <section class="section section-sm section-last bg-default text-start">
+        <div class="container grid-system-bordered grid-demonstration">
+
+
+            {!!$setting->mainpage!!}
+
+
+        </div>
+    </section>
+
 
 
 

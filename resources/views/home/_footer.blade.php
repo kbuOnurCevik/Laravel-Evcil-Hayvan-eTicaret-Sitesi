@@ -6,20 +6,7 @@
     <div class="footer-modern-body section-xl">
         <div class="container">
             <div class="row row-40 row-md-50 justify-content-xl-between">
-                <div class="col-md-10 col-lg-3 col-xl-4 wow fadeInRight">
-                    <div class="inset-xl-right-70">
-                        <h5 class="footer-modern-title">GALERİ</h5>
-                        <div class="row row-10 gutters-10" data-lightgallery="group">
-                            <div class="col-4 col-sm-2 col-lg-4">
-                                <!--   Thumbnail Minimal--><a class="thumbnail-minimal"
-                                                              href="{{asset('assets')}}/images/footer-gallery-1-800x1200-original.jpg"
-                                                              data-lightgallery="item"><img
-                                        src="{{asset('assets')}}/images/grid-gallery-1-178x178.jpg" alt="" width="178"
-                                        height="178"/></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+         
                 <div class="col-sm-6 col-md-7 col-lg-5 wow fadeInRight" data-wow-delay=".1s">
                     <h5 class="footer-modern-title">HIZLI LİNKLER</h5>
                     <ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block">
